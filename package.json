@@ -1,0 +1,26 @@
+{
+  "name": "interactive-kids-book",
+  "version": "1.0.0",
+  "description": "A project generated from aunty's react app template.",
+  "license": "MIT",
+  "private": true,
+  "contributors": [
+    "Nathan Hoad <nathan@nathanhoad.net>"
+  ],
+  "aunty": {
+    "type": "react"
+  },
+  "scripts": {
+    "start": "aunty serve",
+    "test": "aunty test"
+  },
+  "devDependencies": {
+    "@abcnews/aunty": "^9.5.1",
+    "react-test-renderer": "^16.4.1"
+  },
+  "dependencies": {
+    "@abcnews/scrollyteller": "^1.0.8",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}

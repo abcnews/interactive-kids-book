@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App It renders 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="AC_W_aNL Block is-richtext is-piecemeal scrollyteller"
+  >
+    <div
+      className="sgMpdhCf zteFRtuv "
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;

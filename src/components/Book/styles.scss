@@ -1,0 +1,109 @@
+.wrapper {
+  // TODO: use a soft paper background
+  background: #f9f9f9;
+}
+
+.graphic {
+  width: 1000px;
+  height: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  // background: lime;
+
+  transform: translate(-50%, -50%) scale(0.8);
+
+  img {
+    position: absolute;
+  }
+}
+
+.jiggle1 {
+  animation-name: jiggle;
+  animation-delay: 0.1s;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.jiggle2 {
+  animation-name: jiggle;
+  animation-delay: 0.1s;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.jiggle3 {
+  animation-name: jiggle;
+  animation-delay: 0.1s;
+  animation-duration: 0.35s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes jiggle {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(1%, 4%);
+  }
+  20% {
+    transform: translate(-2%, -4%) scale(0.95, 1.05);
+  }
+  30% {
+    transform: translate(-1%, 0%);
+  }
+  40% {
+    transform: translate(2%, -2%);
+  }
+  50% {
+    transform: translate(-2%, -4%) scale(1.05, 0.95);
+  }
+  60% {
+    transform: translate(1%, 3%);
+  }
+  70% {
+    transform: translate(-1%, -3%);
+  }
+  80% {
+    transform: translate(3%, 2%);
+  }
+  90% {
+    transform: translate(1%, -3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.typing1 {
+  animation-name: typing;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.typing2 {
+  animation-name: typing;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

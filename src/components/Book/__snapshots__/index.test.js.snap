@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book It renders 1`] = `
+<div
+  className="wrapper"
+>
+  Find me in 
+  <strong>
+    src/components/Book/index.js
+  </strong>
+</div>
+`;
