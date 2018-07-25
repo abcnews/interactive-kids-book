@@ -1,0 +1,13 @@
+.panel {
+  p {
+    color: black !important;
+  }
+
+  &:before {
+    background-color: rgba(255, 242, 0, 0.95) !important;
+  }
+}
+
+.lastPanel {
+  margin-bottom: 100vh !important;
+}

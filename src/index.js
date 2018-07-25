@@ -5,20 +5,21 @@ const PROJECT_NAME = 'interactive-kids-book';
 const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
 
 const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('book', 'u-full', 'mark');
+const styles = require('./styles.scss');
 
+let pageNumber = 0;
 scrollyteller.panels = scrollyteller.panels.map(panel => {
-  panel.nodes = panel.nodes
-    .map(node => {
-      if (node.tagName && node.querySelector('img')) {
-        panel.config.image = node.querySelector('img').src;
-        return null;
-      }
-      return node;
-    })
-    .filter(n => n);
-
+  if (panel.config.fact) {
+    panel.config.page = scrollyteller.panels[panel.id - 1].config.page;
+    panel.config.align = 'left';
+    panel.config.pageNumber = pageNumber;
+    panel.className = styles.panel;
+  } else {
+    panel.config.pageNumber = ++pageNumber;
+  }
   return panel;
 });
+scrollyteller.panels[scrollyteller.panels.length - 1].className = styles.lastPanel;
 
 function init() {
   const App = require('./components/App');
