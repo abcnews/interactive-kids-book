@@ -13,6 +13,10 @@
   transform-origin: 0 50%;
   transition: transform 0.3s linear;
   will-change: transform;
+
+  &.titlePage {
+    background: rgb(184, 231, 202);
+  }
 }
 
 .overlay {
@@ -255,4 +259,47 @@
 
 .showElephant {
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.blinking {
+  animation-name: blinking;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0;
+  animation-timing-function: linear;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }

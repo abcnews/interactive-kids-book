@@ -1,6 +1,10 @@
 const React = require('react');
 const styles = require('./styles.scss');
 
+const BEAR_TITLE = require('./title-bear.png');
+const BEAR_TITLE_BLINKING = require('./title-bear-blinking.png');
+const TITLE_WORDS = require('./title-bear-finds-a-voice.png');
+
 const ELEPHANT = require('./elephant.png');
 
 const BEAR = require('./bear.png');
@@ -66,6 +70,7 @@ class Book extends React.Component {
 
       return {
         key: page.id,
+        page: page.config.page,
         fact: page.config.fact,
         align,
         pageNumber: page.config.pageNumber,
@@ -89,6 +94,24 @@ class Book extends React.Component {
     this.forceUpdate();
   }
 
+  _title() {
+    return (
+      <div>
+        <img
+          src={OWL_BACKGROUND}
+          style={{ maxWidth: 'initial', width: '3000px', top: '-50px', left: '-1000px', opacity: 0.5 }}
+        />
+        <img src={TITLE_WORDS} style={{ width: '900px', left: '50px', top: '100px' }} />
+        <img src={BEAR_TITLE} style={{ width: '1000px', left: '50px', bottom: '0px' }} />
+        <img
+          src={BEAR_TITLE_BLINKING}
+          className={styles.blinking}
+          style={{ width: '1000px', left: '50px', bottom: '0px' }}
+        />
+      </div>
+    );
+  }
+
   _bear() {
     return (
       <div>
@@ -99,7 +122,6 @@ class Book extends React.Component {
   }
 
   _bearsad() {
-    // TODO: sad eyes
     return (
       <div>
         <img src={OWL_BACKGROUND} style={{ maxWidth: 'initial', width: '1000px', left: '0px', top: '200px' }} />
@@ -275,7 +297,7 @@ class Book extends React.Component {
     const { pageNumber, isFact } = this.props;
 
     const isLandscape = this.width > this.height;
-    const scale = Math.min(this.width / 1000, this.height / 1200) - (isLandscape ? 0.1 : 0);
+    let scale = Math.min(this.width / 1000, this.height / 1200) - (isLandscape ? 0.1 : 0);
 
     return (
       <div className={styles.wrapper} style={{ width: this.width, height: this.height }}>
@@ -290,12 +312,12 @@ class Book extends React.Component {
               x = '-66%';
             }
           }
-          const graphicTransform = `translate(${x}, -50%) scale(${scale})`;
+          const graphicTransform = `translate(${x}, -50%) scale(${page.page === 'title' && isLandscape ? 0.9 : scale})`;
 
           return (
             <div
               key={page.key}
-              className={styles.page}
+              className={`${styles.page} ${page.page === 'title' ? styles.titlePage : ''}`}
               style={{
                 width: this.width,
                 height: this.height,
