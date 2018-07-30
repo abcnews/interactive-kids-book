@@ -3,12 +3,14 @@ const styles = require('./styles.scss');
 
 const BEAR_TITLE = require('./title-bear.png');
 const BEAR_TITLE_BLINKING = require('./title-bear-blinking.png');
-const TITLE_WORDS = require('./title-bear-finds-a-voice.png');
 
 const ELEPHANT = require('./elephant.png');
+const ELEPHANT2 = require('./elephant2.png');
+const ELEPHANT3 = require('./elephant3.png');
 
 const BEAR = require('./bear.png');
-const BEAR_BROW = require('./bear-brow.png');
+const BEAR_SAD = require('./bear-sad.png');
+const BEAR_EYES_ANGRY = require('./bear-angry-eyes.png');
 
 const CHICKEN = require('./chicken.png');
 const CHICKEN_BACKGROUND = require('./chicken-background.jpg');
@@ -59,6 +61,7 @@ class Book extends React.Component {
 
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+    this.isLandscape = this.width > this.height;
 
     this.pages = props.pages.map(page => {
       let align = 'center';
@@ -67,6 +70,8 @@ class Book extends React.Component {
       } else if (page.config.align === 'left') {
         align = 'right';
       }
+
+      this['_' + page.config.page] = this['_' + page.config.page].bind(this);
 
       return {
         key: page.id,
@@ -91,22 +96,82 @@ class Book extends React.Component {
   onResize() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+    this.isLandscape = this.width > this.height;
     this.forceUpdate();
   }
 
   _title() {
+    let titleWidth;
+    let titleTop;
+    if (this.isLandscape) {
+      if (this.width < 916) {
+        titleTop = '-28%';
+        titleWidth = this.width / 916 - 0.2;
+      } else {
+        titleTop = '10%';
+        titleWidth = 1;
+      }
+    } else {
+      titleTop = '5%';
+      titleWidth = this.width / 916 - 0.05;
+    }
+
     return (
       <div>
         <img
           src={OWL_BACKGROUND}
-          style={{ maxWidth: 'initial', width: '3000px', top: '-50px', left: '-1000px', opacity: 0.5 }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '130%' : 'initial',
+            height: this.isLandscape ? 'initial' : '101%',
+            top: '-5%',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
         />
-        <img src={TITLE_WORDS} style={{ width: '900px', left: '50px', top: '100px' }} />
-        <img src={BEAR_TITLE} style={{ width: '1000px', left: '50px', bottom: '0px' }} />
+        <div className={styles.titlePage} />
+        <div
+          style={{
+            position: 'absolute',
+            width: '916px',
+            height: '474px',
+            top: titleTop,
+            left: '50%',
+            transform: `translateX(-50%) scale(${titleWidth})`
+          }}>
+          <img className={styles.float1} src={require('./title-word-bear.png')} style={{ left: '0px', top: '0px' }} />
+          <img
+            className={styles.float2}
+            src={require('./title-word-finds.png')}
+            style={{ left: '516px', top: '43px' }}
+          />
+          <img className={styles.float3} src={require('./title-word-a.png')} style={{ left: '182px', top: '233px' }} />
+          <img
+            className={styles.float4}
+            src={require('./title-word-voice.png')}
+            style={{ left: '340px', top: '224px' }}
+          />
+        </div>
+        <img
+          src={BEAR_TITLE}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '50%' : '120%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: '0px'
+          }}
+        />
         <img
           src={BEAR_TITLE_BLINKING}
           className={styles.blinking}
-          style={{ width: '1000px', left: '50px', bottom: '0px' }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '50%' : '120%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: '0px'
+          }}
         />
       </div>
     );
@@ -115,8 +180,27 @@ class Book extends React.Component {
   _bear() {
     return (
       <div>
-        <img src={OWL_BACKGROUND} style={{ maxWidth: 'initial', width: '1000px', left: '0px', top: '200px' }} />
-        <img src={BEAR} style={{ width: '700px', bottom: '0px', left: '150px' }} />
+        <img
+          src={OWL_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '10%' : '30%'
+          }}
+        />
+        <img
+          src={BEAR}
+          style={{
+            width: this.isLandscape ? 'initial' : '90%',
+            height: this.isLandscape ? '70%' : 'initial',
+            bottom: '3%',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        />
       </div>
     );
   }
@@ -124,10 +208,27 @@ class Book extends React.Component {
   _bearsad() {
     return (
       <div>
-        <img src={OWL_BACKGROUND} style={{ maxWidth: 'initial', width: '1000px', left: '0px', top: '200px' }} />
-        <img src={BEAR} style={{ width: '700px', bottom: '0px', left: '150px' }} />
-        <img src={BEAR_BROW} style={{ width: '40px', top: '450px', left: '330px', transform: 'rotate(-35deg)' }} />
-        <img src={BEAR_BROW} style={{ width: '40px', top: '450px', left: '550px', transform: 'rotate(35deg)' }} />
+        <img
+          src={OWL_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '10%' : '30%'
+          }}
+        />
+        <img
+          src={BEAR_SAD}
+          style={{
+            width: this.isLandscape ? 'initial' : '90%',
+            height: this.isLandscape ? '70%' : 'initial',
+            bottom: '3%',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        />
       </div>
     );
   }
@@ -135,11 +236,36 @@ class Book extends React.Component {
   _chicken() {
     return (
       <div>
-        <img src={CHICKEN_BACKGROUND} style={{ maxWidth: 'initial', width: '1000px', left: '-400px', top: '100px' }} />
-        <img src={CHICKEN} style={{ width: '300px', left: '0px', bottom: '250px' }} />
+        <img
+          src={CHICKEN_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '70%' : 'initial',
+            height: this.isLandscape ? 'initial' : '70%',
+            left: this.isLandscape ? '30%' : '34%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '25%' : '40%'
+          }}
+        />
+        <img
+          src={CHICKEN}
+          style={{
+            width: this.isLandscape ? '12%' : 'initial',
+            height: this.isLandscape ? 'initial' : '15%',
+            left: this.isLandscape ? '20%' : '25%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '25%' : '35%'
+          }}
+        />
         <img
           src={BEAR_LISTENING}
-          style={{ width: '500px', right: '100px', bottom: '0px', transform: `scale(-1, 1) rotate(3deg)` }}
+          style={{
+            width: this.isLandscape ? '25%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: this.isLandscape ? '50%' : '40%',
+            bottom: '4%',
+            transform: `scale(-1, 1) rotate(3deg)`
+          }}
         />
       </div>
     );
@@ -150,9 +276,26 @@ class Book extends React.Component {
       <div>
         <img
           src={CHICKEN_BACKGROUND}
-          style={{ maxWidth: 'initial', width: '1500px', left: '-300px', top: '-300px', opacity: 0.3 }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '110%',
+            left: this.isLandscape ? '40%' : '34%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '30%' : '40%',
+            opacity: 0.4
+          }}
         />
-        <img src={CHICKEN_CLOSER} style={{ width: '500px', left: '150px', bottom: '100px' }} />
+        <img
+          src={CHICKEN_CLOSER}
+          style={{
+            width: this.isLandscape ? '30%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: this.isLandscape ? '40%' : '50%',
+            transform: 'translateX(-50%)',
+            bottom: '5%'
+          }}
+        />
       </div>
     );
   }
@@ -160,29 +303,38 @@ class Book extends React.Component {
   _owl() {
     return (
       <div>
-        <img src={OWL_BACKGROUND} style={{ maxWidth: 'initial', width: '600px', left: '200px', top: '300px' }} />
-        <img src={OWL_BACKGROUND} style={{ maxWidth: 'initial', width: '700px', right: '-300px', top: '300px' }} />
-        <img src={OWL} style={{ maxWidth: 'initial', width: '1000px', right: '-300px', top: '50px' }} />
-        <img src={BEAR_LISTENING} style={{ width: '450px', left: '0px', bottom: '0px' }} />
-      </div>
-    );
-  }
-
-  _bunny() {
-    return (
-      <div>
-        <img src={BUNNY_BACKGROUND} style={{ maxWidth: 'initial', width: '1100px', left: '-100px', top: '0px' }} />
         <img
-          src={BUNNY_BABY}
-          className={styles.babyBunny3}
-          style={{ width: '140px', left: '480px', bottom: '300px', opacity: 0.9 }}
+          src={OWL_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: '40%',
+            transform: 'translateX(-50%) scale(-1, 1)',
+            bottom: '30%',
+            opacity: 0.5
+          }}
         />
-        <img src={BUNNY} style={{ width: '400px', left: '100px', bottom: '200px' }} />
-        <img src={BUNNY_BABY} className={styles.babyBunny1} style={{ width: '180px', left: '0px', bottom: '50px' }} />
         <img
-          src={BUNNY_BABY}
-          className={styles.babyBunny2}
-          style={{ width: '180px', left: '500px', bottom: '150px' }}
+          src={OWL}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '60%' : 'initial',
+            height: this.isLandscape ? 'initial' : '100%',
+            left: '90%',
+            transform: 'translateX(-50%)',
+            bottom: '5%'
+          }}
+        />
+        <img
+          src={BEAR_LISTENING}
+          style={{
+            width: this.isLandscape ? '25%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: this.isLandscape ? '30%' : '0%',
+            transform: 'translateX(-50%)',
+            bottom: '-5%'
+          }}
         />
       </div>
     );
@@ -191,8 +343,27 @@ class Book extends React.Component {
   _pig() {
     return (
       <div>
-        <img src={PIG_BACKGROUND} style={{ maxWidth: 'initial', width: '1200px', right: '-300px', top: '100px' }} />
-        <img src={PIG} style={{ width: '400px', right: '0px', bottom: '200px' }} />
+        <img
+          src={PIG_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: this.isLandscape ? '50%' : '40%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '10%' : '30%'
+          }}
+        />
+        <img
+          src={PIG}
+          style={{
+            width: this.isLandscape ? '25%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: this.isLandscape ? '70%' : '70%',
+            transform: 'translateX(-50%)',
+            bottom: '10%'
+          }}
+        />
       </div>
     );
   }
@@ -202,9 +373,87 @@ class Book extends React.Component {
       <div>
         <img
           src={PIG_BACKGROUND}
-          style={{ maxWidth: 'initial', width: '1400px', right: '-200px', top: '-100px', opacity: 0.3 }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: this.isLandscape ? '50%' : '50%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '10%' : '30%'
+          }}
         />
-        <img src={PIG_CLOSER} style={{ width: '600px', left: '200px', bottom: '50px' }} />
+        <img
+          src={PIG_CLOSER}
+          style={{
+            width: this.isLandscape ? '25%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: this.isLandscape ? '65%' : '50%',
+            transform: 'translateX(-50%)',
+            bottom: '10%'
+          }}
+        />
+      </div>
+    );
+  }
+
+  _bunny() {
+    return (
+      <div>
+        <img
+          src={BUNNY_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '60%' : 'initial',
+            height: this.isLandscape ? 'initial' : '70%',
+            left: this.isLandscape ? '20%' : '50%',
+            transform: 'translateX(-50%)',
+            bottom: '20%'
+          }}
+        />
+        <img
+          src={BUNNY_BABY}
+          className={styles.babyBunny3}
+          style={{
+            width: this.isLandscape ? '8%' : 'initial',
+            height: this.isLandscape ? 'initial' : '10%',
+            left: this.isLandscape ? '30%' : '50%',
+            bottom: '30%',
+            opacity: 0.9
+          }}
+        />
+
+        <img
+          src={BUNNY}
+          style={{
+            width: this.isLandscape ? '22%' : 'initial',
+            height: this.isLandscape ? 'initial' : '50%',
+            left: this.isLandscape ? '20%' : '20%',
+            transform: 'translateX(-50%)',
+            bottom: '10%'
+          }}
+        />
+
+        <img
+          src={BUNNY_BABY}
+          className={styles.babyBunny1}
+          style={{
+            width: this.isLandscape ? '10%' : 'initial',
+            height: this.isLandscape ? 'initial' : '12%',
+            left: this.isLandscape ? '2%' : '-100%',
+            bottom: '0%'
+          }}
+        />
+
+        <img
+          src={BUNNY_BABY}
+          className={styles.babyBunny2}
+          style={{
+            width: this.isLandscape ? '9%' : 'initial',
+            height: this.isLandscape ? 'initial' : '12%',
+            left: this.isLandscape ? '32%' : '55%',
+            bottom: '15%'
+          }}
+        />
       </div>
     );
   }
@@ -214,10 +463,35 @@ class Book extends React.Component {
       <div>
         <img
           src={OFFICE_BACKGROUND}
-          style={{ maxWidth: 'initial', width: '1200px', right: '-250px', bottom: '300px' }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '70%' : 'initial',
+            height: this.isLandscape ? 'initial' : '50%',
+            left: '70%',
+            transform: 'translate(-50%)',
+            bottom: '20%'
+          }}
         />
-        <img src={MONKEY} className={styles.monkey} style={{ width: '500px', right: '-150px', top: '550px' }} />
-        <img src={BEAR_LISTENING} style={{ width: '450px', left: '0px', bottom: '0px' }} />
+        <img
+          src={MONKEY}
+          className={styles.monkey}
+          style={{
+            width: this.isLandscape ? '23%' : 'initial',
+            height: this.isLandscape ? 'initial' : '30%',
+            left: this.isLandscape ? '70%' : '60%',
+            bottom: '20%'
+          }}
+        />
+        <img
+          src={BEAR_LISTENING}
+          style={{
+            width: this.isLandscape ? '25%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: this.isLandscape ? '30%' : '20%',
+            transform: 'translate(-50%)',
+            bottom: '2%'
+          }}
+        />
       </div>
     );
   }
@@ -227,9 +501,26 @@ class Book extends React.Component {
       <div>
         <img
           src={OFFICE_BACKGROUND}
-          style={{ maxWidth: 'initial', width: '2000px', right: '-600px', bottom: '400px', opacity: 0.3 }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '120%' : 'initial',
+            height: this.isLandscape ? 'initial' : '100%',
+            left: this.isLandscape ? '70%' : '55%',
+            transform: 'translate(-50%)',
+            bottom: this.isLandscape ? '10%' : '20%',
+            opacity: 0.3
+          }}
         />
-        <img src={MONKEY_THINKING} style={{ width: '500px', right: '0px', top: '100px' }} />
+        <img
+          src={MONKEY_THINKING}
+          style={{
+            width: this.isLandscape ? '35%' : 'initial',
+            height: this.isLandscape ? 'intital' : '90%',
+            left: '60%',
+            transform: 'translateX(-50%)',
+            top: '10%'
+          }}
+        />
       </div>
     );
   }
@@ -239,9 +530,26 @@ class Book extends React.Component {
       <div>
         <img
           src={OWL_BACKGROUND}
-          style={{ maxWidth: 'initial', width: '1000px', right: '-200px', bottom: '300px', opacity: 0.4 }}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '90%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: '60%',
+            transform: 'translateX(-50%)',
+            bottom: '30%',
+            opacity: 0.4
+          }}
         />
-        <img src={FOX} style={{ width: '500px', bottom: '0px', right: '0px' }} />
+        <img
+          src={FOX}
+          style={{
+            width: this.isLandscape ? '25%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            left: '75%',
+            transform: 'translateX(-50%)',
+            bottom: '5%'
+          }}
+        />
       </div>
     );
   }
@@ -249,11 +557,47 @@ class Book extends React.Component {
   _foxcloser() {
     return (
       <div>
-        <img src={OWL_BACKGROUND} style={{ maxWidth: 'initial', width: '1000px', left: '0px', top: '100px' }} />
-        <img src={BEAR} style={{ width: '500px', bottom: '200px', left: '150px' }} />
-        <img src={BEAR_BROW} style={{ width: '35px', top: '460px', left: '280px', transform: 'rotate(5deg)' }} />
-        <img src={BEAR_BROW} style={{ width: '35px', top: '460px', left: '430px', transform: 'rotate(-5deg)' }} />
-        <img src={FOX_BEHIND} style={{ width: '400px', bottom: '50px', left: '350px' }} />
+        <img
+          src={OWL_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '100%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: '20%'
+          }}
+        />
+        <img
+          src={BEAR}
+          style={{
+            width: this.isLandscape ? '27%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            bottom: '20%',
+            left: '35%',
+            transform: 'translateX(-50%)'
+          }}
+        />
+        <img
+          src={BEAR_EYES_ANGRY}
+          style={{
+            width: this.isLandscape ? '27%' : 'initial',
+            height: this.isLandscape ? 'initial' : '60%',
+            bottom: '20%',
+            left: '35%',
+            transform: 'translateX(-50%)'
+          }}
+        />
+        <img
+          src={FOX_BEHIND}
+          style={{
+            width: this.isLandscape ? '22%' : 'initial',
+            height: this.isLandscape ? 'initial' : '35%',
+            bottom: '2%',
+            left: '30%',
+            transform: 'translateX(-50%)'
+          }}
+        />
       </div>
     );
   }
@@ -261,7 +605,15 @@ class Book extends React.Component {
   _roaring() {
     return (
       <div>
-        <div style={{ position: 'absolute', top: '150px', left: '150px', width: '690px', height: '200px' }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: '10%',
+            left: '50%',
+            transform: `translateX(-50%) scale(${this.isLandscape || this.width > 690 ? 1 : 0.6})`,
+            width: '690px',
+            height: '200px'
+          }}>
           <img src={ROAR_R1} className={styles.jiggle1} style={{ width: '180px', top: '40px', left: '0px' }} />
           <img src={ROAR_O1} className={styles.jiggle2} style={{ width: '120px', top: '20px', left: '140px' }} />
           <img src={ROAR_A1} className={styles.jiggle3} style={{ width: '80px', top: '5px', left: '260px' }} />
@@ -270,7 +622,17 @@ class Book extends React.Component {
           <img src={ROAR_R3} className={styles.jiggle2} style={{ width: '100px', top: '10px', left: '540px' }} />
           <img src={ROAR_BANG} className={styles.jiggle1} style={{ width: '60px', top: '20px', left: '630px' }} />
         </div>
-        <img src={BEAR_ROAR} style={{ width: '1000px', bottom: '-400px', left: '0px' }} />
+        <img
+          src={BEAR_ROAR}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '55%' : 'initial',
+            height: this.isLandscape ? 'initial' : '95%',
+            top: this.isLandscape ? '30%' : '40%',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        />
       </div>
     );
   }
@@ -278,7 +640,18 @@ class Book extends React.Component {
   _bearbox() {
     return (
       <div>
-        <img src={BEAR_BOX} style={{ width: '700px', left: '0', bottom: '300px', opacity: 0.9 }} />
+        <img
+          src={BEAR_BOX}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '30%' : 'initial',
+            height: this.isLandscape ? 'initial' : '30%',
+            left: '33%',
+            top: '45%',
+            transform: 'translate(-50%, -50%)',
+            opacity: 0.9
+          }}
+        />
       </div>
     );
   }
@@ -286,9 +659,51 @@ class Book extends React.Component {
   _typing() {
     return (
       <div>
-        <img src={TYPE_1} className={styles.typing1} style={{ width: '120px', top: '690px', left: '180px' }} />
-        <img src={TYPE_2} className={styles.typing2} style={{ width: '120px', top: '750px', left: '160px' }} />
-        <img src={BEAR_TYPING} style={{ width: '800px', bottom: '50px', left: '100px' }} />
+        <img
+          src={OWL_BACKGROUND}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '70%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '30%' : '40%',
+            opacity: 0.4
+          }}
+        />
+        <img
+          src={TYPE_1}
+          className={styles.typing1}
+          style={{
+            width: this.isLandscape ? '7%' : 'initial',
+            height: this.isLandscape ? 'initial' : '3%',
+            top: '50%',
+            left: this.isLandscape ? '35%' : '20%',
+            transform: 'translateX(-50%)'
+          }}
+        />
+        <img
+          src={TYPE_2}
+          className={styles.typing2}
+          style={{
+            width: this.isLandscape ? '7%' : 'initital',
+            height: this.isLandscape ? 'initial' : '5%',
+            top: '54%',
+            left: this.isLandscape ? '35%' : '28%',
+            transform: 'translateX(-50%)'
+          }}
+        />
+        <img
+          src={BEAR_TYPING}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '30%' : 'initial',
+            height: this.isLandscape ? 'initial' : '50%',
+            top: '57%',
+            left: '50%',
+            transform: 'translate(-50%,-50%)'
+          }}
+        />
       </div>
     );
   }
@@ -296,37 +711,31 @@ class Book extends React.Component {
   render() {
     const { pageNumber, isFact } = this.props;
 
-    const isLandscape = this.width > this.height;
-    let scale = Math.min(this.width / 1000, this.height / 1200) - (isLandscape ? 0.1 : 0);
+    let scale = Math.min(this.width / 1000, this.height / 1200) - (this.isLandscape ? 0.1 : 0);
+
+    let elephantIndex = pageNumber % 3;
+    if (pageNumber === 0) {
+      elephantIndex = -1;
+    }
 
     return (
       <div className={styles.wrapper} style={{ width: this.width, height: this.height }}>
         {this.pages.map((page, index) => {
           const isCurrentPage = pageNumber <= page.pageNumber;
 
-          let x = '-50%';
-          if (this.width > 1100) {
-            if (page.align === 'right') {
-              x = '-33%';
-            } else if (page.align === 'left') {
-              x = '-66%';
-            }
-          }
-          const graphicTransform = `translate(${x}, -50%) scale(${page.page === 'title' && isLandscape ? 0.9 : scale})`;
+          if (page.pageNumber > pageNumber + 2) return;
 
           return (
             <div
               key={page.key}
-              className={`${styles.page} ${page.page === 'title' ? styles.titlePage : ''}`}
+              className={styles.page}
               style={{
                 width: this.width,
                 height: this.height,
                 zIndex: 100 + (this.pages.length - index),
                 transform: isCurrentPage ? TRANSFORM_PAGE_IN : TRANSFORM_PAGE_OUT
               }}>
-              <div className={styles.graphic} style={{ transform: graphicTransform }}>
-                {page.render && page.render()}
-              </div>
+              <div className={styles.graphic}>{page.render && page.render()}</div>
               <div
                 className={styles.overlay}
                 style={{ width: this.width, height: this.height, opacity: isCurrentPage ? 0 : 1 }}
@@ -336,12 +745,47 @@ class Book extends React.Component {
         })}
 
         <div
-          className={`${styles.elephantBackground} ${isFact ? styles.showElephant : ''}`}
+          className={`${styles.elephantBackground} ${isFact && elephantIndex == 0 ? styles.showElephant : ''}`}
           style={{ width: this.width, height: this.height }}>
           <div
             className={styles.elephant}
-            style={{ transform: `scale(${scale}) ${isFact ? 'translate(0, 0)' : 'translate(150%, 150%)'}` }}>
+            style={{
+              bottom: '0px',
+              right: '0px',
+              transform: `scale(${scale}) ${isFact && elephantIndex == 0 ? 'translate(0, 0)' : 'translate(150%, 150%)'}`
+            }}>
             <img src={ELEPHANT} />
+          </div>
+        </div>
+
+        <div
+          className={`${styles.elephantBackground} ${isFact && elephantIndex == 1 ? styles.showElephant : ''}`}
+          style={{ width: this.width, height: this.height }}>
+          <div
+            className={styles.elephant}
+            style={{
+              bottom: '0px',
+              left: '0px',
+              transformOrigin: '0% 100%',
+              transform: `scale(${scale}) ${
+                isFact && elephantIndex == 1 ? 'translate(0, 0)' : 'translate(-150%, 150%)'
+              }`
+            }}>
+            <img src={ELEPHANT2} />
+          </div>
+        </div>
+
+        <div
+          className={`${styles.elephantBackground} ${isFact && elephantIndex == 2 ? styles.showElephant : ''}`}
+          style={{ width: this.width, height: this.height }}>
+          <div
+            className={styles.elephant}
+            style={{
+              bottom: '0px',
+              right: '0px',
+              transform: `scale(${scale}) ${isFact && elephantIndex == 2 ? 'translate(0, 0)' : 'translate(150%, 150%)'}`
+            }}>
+            <img src={ELEPHANT3} />
           </div>
         </div>
       </div>

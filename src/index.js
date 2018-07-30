@@ -10,16 +10,17 @@ const styles = require('./styles.scss');
 let pageNumber = 0;
 scrollyteller.panels = scrollyteller.panels.map(panel => {
   if (panel.config.fact) {
-    panel.config.page = scrollyteller.panels[panel.id - 1].config.page;
-    panel.config.align = 'left';
+    if (panel.id > 1) {
+      panel.config.page = scrollyteller.panels[panel.id - 1].config.page;
+    }
+    panel.config.align = 'center';
     panel.config.pageNumber = pageNumber;
-    panel.className = styles.panel;
+    panel.className = styles.factPanel;
   } else {
     panel.config.pageNumber = ++pageNumber;
   }
   return panel;
 });
-scrollyteller.panels[scrollyteller.panels.length - 1].className = styles.lastPanel;
 
 function init() {
   const App = require('./components/App');

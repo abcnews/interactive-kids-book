@@ -33,7 +33,7 @@ class App extends React.Component {
         <Scrollyteller
           panels={scrollyteller.panels}
           className={`Block is-richtext is-piecemeal ${styles.scrollyteller}`}
-          panelClassName={`Block-content u-layout u-richtext`}
+          panelClassName={`Block-content u-layout u-richtext ${styles.panel}`}
           onMarker={this.onMarker}>
           <Book pages={scrollyteller.panels} pageNumber={config.pageNumber} isFact={config.isFact} />
         </Scrollyteller>

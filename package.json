@@ -19,7 +19,7 @@
     "react-test-renderer": "^16.4.1"
   },
   "dependencies": {
-    "@abcnews/scrollyteller": "^1.1.0",
+    "@abcnews/scrollyteller": "^1.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   }

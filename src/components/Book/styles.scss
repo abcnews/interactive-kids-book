@@ -14,8 +14,13 @@
   transition: transform 0.3s linear;
   will-change: transform;
 
-  &.titlePage {
-    background: rgb(184, 231, 202);
+  .titlePage {
+    background: rgba(184, 231, 202, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -29,11 +34,13 @@
 }
 
 .graphic {
-  width: 1000px;
-  height: 1200px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 
   img {
@@ -236,7 +243,7 @@
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0);
-  transition: background-color 0.3s ease;
+  // transition: background-color 0.3s ease;
 }
 
 .elephant {
@@ -301,5 +308,77 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+.float1 {
+  animation-name: float;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: -2s;
+  animation-iteration-count: infinite;
+}
+
+.float2 {
+  animation-name: float;
+  animation-duration: 3.6s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+}
+.float3 {
+  animation-name: floatsmall;
+  animation-duration: 4.2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: -3.1s;
+  animation-iteration-count: infinite;
+}
+.float4 {
+  animation-name: float;
+  animation-duration: 3.9s;
+  animation-timing-function: ease-in-out;
+  animation-delay: -1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-0.5%, 1.5%);
+  }
+  40% {
+    transform: translate(1%, 0.5%);
+  }
+  60% {
+    transform: translate(-1%, 0.5%);
+  }
+  80% {
+    transform: translate(0.5%, 1.5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floatsmall {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-1%, 3%);
+  }
+  40% {
+    transform: translate(2%, 1%);
+  }
+  60% {
+    transform: translate(-2%, 1%);
+  }
+  80% {
+    transform: translate(1%, 3%);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
