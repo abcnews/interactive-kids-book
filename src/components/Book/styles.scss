@@ -1,12 +1,14 @@
 .wrapper {
   // TODO: use a soft paper background
   background: #f9f9f9;
+  background-image: url('./paper-pattern.png');
   perspective: 12000px;
   transform: translateZ(0);
 }
 
 .page {
   background: #f9f9f9;
+  background-image: url('./paper-pattern.png');
   position: absolute;
   top: 0;
   left: 0;
@@ -268,15 +270,58 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.blinking {
-  animation-name: blinking;
+.blinkingOpen {
+  animation-name: blinkingOpen;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-delay: 0;
   animation-timing-function: linear;
 }
 
-@keyframes blinking {
+.blinkingClosed {
+  animation-name: blinkingClosed;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0;
+  animation-timing-function: linear;
+}
+
+@keyframes blinkingOpen {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+  81% {
+    opacity: 0;
+  }
+  84% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+  91% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkingClosed {
   0% {
     opacity: 0;
   }

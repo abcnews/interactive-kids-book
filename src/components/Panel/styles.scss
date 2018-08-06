@@ -1,0 +1,129 @@
+.wrapper {
+  position: relative;
+
+  &:nth-child(2) {
+    margin-top: 105vh;
+  }
+}
+
+.base {
+  box-sizing: border-box;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  margin-bottom: 40vh;
+  margin-top: 40vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+  z-index: 1;
+
+  max-width: 800px;
+
+  background-image: url('./balloon-background.png');
+  background-size: 100% 100%;
+
+  &:nth-child(2) {
+    margin-top: 105vh;
+  }
+
+  &:last-of-type {
+    margin-bottom: 100vh;
+  }
+
+  &.fact {
+    z-index: 2;
+    background-image: url('./fact-background.png');
+    background-size: 100% 100%;
+
+    * {
+      font-family: 'Comic Sans MS';
+    }
+
+    .stick {
+      position: absolute;
+      top: calc(100% - 3px);
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      transform: translateX(-50%);
+    }
+
+    .stickRight {
+      background: url('./stick-right.png') no-repeat top left;
+      left: 60%;
+    }
+
+    .stickLeft {
+      background: url('./stick-left.png') no-repeat top left;
+      left: 40%;
+    }
+  }
+
+  p {
+    font-family: ABCSerif, Book Antiqua, Palatino Linotype, Palatino, serif;
+    font-size: 1.375rem;
+    line-height: 1.666666667;
+    color: #111111;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    margin-top: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1023px) {
+  .right {
+    margin-right: calc(30% - 24.75rem) !important;
+    width: 49.5rem !important;
+  }
+
+  .left {
+    margin-left: calc(30% - 24.75rem) !important;
+    width: 49.5rem !important;
+  }
+}
+
+@media only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .base {
+    margin-right: auto !important;
+    margin-left: auto !important;
+
+    padding-top: 8%;
+    padding-bottom: 8%;
+
+    width: 95% !important;
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.555555556;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
+    &.fact {
+      .stick {
+        width: 50px;
+        height: 50px;
+        background-size: 50px 50px;
+      }
+
+      .stickLeft {
+        left: 80%;
+      }
+
+      .stickRight {
+        left: 20%;
+      }
+    }
+  }
+}

@@ -5,24 +5,11 @@
   background: #300 !important;
 }
 
-.panel {
+:global(.storyPanel) {
   &:before {
-    border-radius: 10px !important;
-    border: 3px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 10px;
+    background-color: rgba(249, 249, 249, 0.9) !important;
   }
-
-  // &:after {
-  //   content: '';
-  //   background-image: url('./leaf.png');
-  //   background-repeat: no-repeat;
-  //   background-size: 100px 40px;
-  //   position: absolute;
-  //   top: 0px;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   width: 100px;
-  //   height: 40px;
-  // }
 
   &:nth-child(2) {
     margin-top: 110vh !important;

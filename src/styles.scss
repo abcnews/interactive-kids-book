@@ -6,12 +6,6 @@
   display: none;
 }
 
-.factPanel {
-  p {
-    color: black !important;
-  }
-
-  &:before {
-    background-color: rgba(255, 242, 0, 0.95) !important;
-  }
+:global(.Nav) {
+  display: none;
 }

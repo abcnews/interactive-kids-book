@@ -1,6 +1,6 @@
-# interactive-kids-book
+# Interactive kids book
 
-A project generated from [aunty](https://github.com/abcnews/aunty)'s `react` app template.
+An interactive kids book about kids books.
 
 ## Authors
 

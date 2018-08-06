@@ -3,10 +3,11 @@
 exports[`Book It renders 1`] = `
 <div
   className="wrapper"
->
-  Find me in 
-  <strong>
-    src/components/Book/index.js
-  </strong>
-</div>
+  style={
+    Object {
+      "height": 768,
+      "width": 1024,
+    }
+  }
+/>
 `;

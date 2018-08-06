@@ -1,3 +1,5 @@
+require('./styles.scss');
+
 const React = require('react');
 const { render } = require('react-dom');
 
@@ -5,7 +7,6 @@ const PROJECT_NAME = 'interactive-kids-book';
 const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
 
 const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('book', 'u-full', 'mark');
-const styles = require('./styles.scss');
 
 let pageNumber = 0;
 scrollyteller.panels = scrollyteller.panels.map(panel => {
@@ -15,7 +16,6 @@ scrollyteller.panels = scrollyteller.panels.map(panel => {
     }
     panel.config.align = 'center';
     panel.config.pageNumber = pageNumber;
-    panel.className = styles.factPanel;
   } else {
     panel.config.pageNumber = ++pageNumber;
   }
@@ -27,7 +27,11 @@ function init() {
   render(<App scrollyteller={scrollyteller} />, scrollyteller.mountNode);
 }
 
-init();
+if (window.__ODYSSEY__) {
+  init();
+} else {
+  window.addEventListener('odyssey:api', init);
+}
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {

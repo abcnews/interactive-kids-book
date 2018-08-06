@@ -2,35 +2,32 @@ const React = require('react');
 const styles = require('./styles.scss');
 
 const BEAR_TITLE = require('./title-bear.png');
-const BEAR_TITLE_BLINKING = require('./title-bear-blinking.png');
-
-const ELEPHANT = require('./elephant.png');
-const ELEPHANT2 = require('./elephant2.png');
-const ELEPHANT3 = require('./elephant3.png');
+const BEAR_TITLE_EYES_OPEN = require('./eyes-open.png');
+const BEAR_TITLE_EYES_CLOSED = require('./eyes-closed.png');
 
 const BEAR = require('./bear.png');
 const BEAR_SAD = require('./bear-sad.png');
 const BEAR_EYES_ANGRY = require('./bear-angry-eyes.png');
 
 const CHICKEN = require('./chicken.png');
-const CHICKEN_BACKGROUND = require('./chicken-background.jpg');
+const CHICKEN_BACKGROUND = require('./chicken-background.png');
 const CHICKEN_CLOSER = require('./chicken-closer.png');
 
 const BEAR_LISTENING = require('./bear-listening.png');
 const OWL = require('./owl.png');
-const OWL_BACKGROUND = require('./owl-background.jpg');
+const OWL_BACKGROUND = require('./owl-background.png');
 
 const BUNNY = require('./bunny.png');
 const BUNNY_BABY = require('./bunny-baby.png');
-const BUNNY_BACKGROUND = require('./bunny-background.jpg');
+const BUNNY_BACKGROUND = require('./bunny-background.png');
 
 const PIG = require('./pig.png');
-const PIG_BACKGROUND = require('./pig-background.jpg');
+const PIG_BACKGROUND = require('./pig-background.png');
 const PIG_CLOSER = require('./pig-closer.png');
 
 const MONKEY = require('./monkey.png');
 const MONKEY_THINKING = require('./monkey-thinking.png');
-const OFFICE_BACKGROUND = require('./office-background.jpg');
+const OFFICE_BACKGROUND = require('./office-background.png');
 
 const FOX = require('./fox.png');
 const FOX_BEHIND = require('./fox-behind.png');
@@ -139,17 +136,25 @@ class Book extends React.Component {
             left: '50%',
             transform: `translateX(-50%) scale(${titleWidth})`
           }}>
-          <img className={styles.float1} src={require('./title-word-bear.png')} style={{ left: '0px', top: '0px' }} />
+          <img
+            className={styles.float1}
+            src={require('./title-word-bear.png')}
+            style={{ left: '0px', top: '0px', maxWidth: '500px' }}
+          />
           <img
             className={styles.float2}
             src={require('./title-word-finds.png')}
-            style={{ left: '516px', top: '43px' }}
+            style={{ left: '516px', top: '43px', maxWidth: '400px' }}
           />
-          <img className={styles.float3} src={require('./title-word-a.png')} style={{ left: '182px', top: '233px' }} />
+          <img
+            className={styles.float3}
+            src={require('./title-word-a.png')}
+            style={{ left: '182px', top: '233px', maxWidth: '100px' }}
+          />
           <img
             className={styles.float4}
             src={require('./title-word-voice.png')}
-            style={{ left: '340px', top: '224px' }}
+            style={{ left: '340px', top: '224px', maxWidth: '550px' }}
           />
         </div>
         <img
@@ -159,18 +164,29 @@ class Book extends React.Component {
             width: this.isLandscape ? '50%' : '120%',
             left: '50%',
             transform: 'translateX(-50%)',
-            bottom: '0px'
+            bottom: this.isLandscape ? '-100px' : '-50px'
           }}
         />
         <img
-          src={BEAR_TITLE_BLINKING}
-          className={styles.blinking}
+          src={BEAR_TITLE_EYES_OPEN}
+          className={styles.blinkingOpen}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '50%' : '120%',
             left: '50%',
             transform: 'translateX(-50%)',
-            bottom: '0px'
+            bottom: this.isLandscape ? '-100px' : '-30px'
+          }}
+        />
+        <img
+          src={BEAR_TITLE_EYES_CLOSED}
+          className={styles.blinkingClosed}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '50%' : '120%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bottom: this.isLandscape ? '-100px' : '-30px'
           }}
         />
       </div>
@@ -251,7 +267,7 @@ class Book extends React.Component {
           src={CHICKEN}
           style={{
             width: this.isLandscape ? '12%' : 'initial',
-            height: this.isLandscape ? 'initial' : '15%',
+            height: this.isLandscape ? 'initial' : '20%',
             left: this.isLandscape ? '20%' : '25%',
             transform: 'translateX(-50%)',
             bottom: this.isLandscape ? '25%' : '35%'
@@ -262,9 +278,9 @@ class Book extends React.Component {
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '80%',
-            left: this.isLandscape ? '50%' : '40%',
+            left: this.isLandscape ? '30%' : '20%',
             bottom: '4%',
-            transform: `scale(-1, 1) rotate(3deg)`
+            transform: `scale(-1, 1) rotate(3deg) translateX(-50%)`
           }}
         />
       </div>
@@ -289,11 +305,11 @@ class Book extends React.Component {
         <img
           src={CHICKEN_CLOSER}
           style={{
-            width: this.isLandscape ? '30%' : 'initial',
+            width: this.isLandscape ? '20%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
             left: this.isLandscape ? '40%' : '50%',
             transform: 'translateX(-50%)',
-            bottom: '5%'
+            bottom: '8%'
           }}
         />
       </div>
@@ -414,8 +430,8 @@ class Book extends React.Component {
           src={BUNNY_BABY}
           className={styles.babyBunny3}
           style={{
-            width: this.isLandscape ? '8%' : 'initial',
-            height: this.isLandscape ? 'initial' : '10%',
+            width: this.isLandscape ? '7%' : 'initial',
+            height: this.isLandscape ? 'initial' : '11%',
             left: this.isLandscape ? '30%' : '50%',
             bottom: '30%',
             opacity: 0.9
@@ -425,8 +441,8 @@ class Book extends React.Component {
         <img
           src={BUNNY}
           style={{
-            width: this.isLandscape ? '22%' : 'initial',
-            height: this.isLandscape ? 'initial' : '50%',
+            width: this.isLandscape ? '20%' : 'initial',
+            height: this.isLandscape ? 'initial' : '48%',
             left: this.isLandscape ? '20%' : '20%',
             transform: 'translateX(-50%)',
             bottom: '10%'
@@ -437,8 +453,8 @@ class Book extends React.Component {
           src={BUNNY_BABY}
           className={styles.babyBunny1}
           style={{
-            width: this.isLandscape ? '10%' : 'initial',
-            height: this.isLandscape ? 'initial' : '12%',
+            width: this.isLandscape ? '9%' : 'initial',
+            height: this.isLandscape ? 'initial' : '1%',
             left: this.isLandscape ? '2%' : '-100%',
             bottom: '0%'
           }}
@@ -448,7 +464,7 @@ class Book extends React.Component {
           src={BUNNY_BABY}
           className={styles.babyBunny2}
           style={{
-            width: this.isLandscape ? '9%' : 'initial',
+            width: this.isLandscape ? '8%' : 'initial',
             height: this.isLandscape ? 'initial' : '12%',
             left: this.isLandscape ? '32%' : '55%',
             bottom: '15%'
@@ -578,7 +594,7 @@ class Book extends React.Component {
             transform: 'translateX(-50%)'
           }}
         />
-        <img
+        {/* <img
           src={BEAR_EYES_ANGRY}
           style={{
             width: this.isLandscape ? '27%' : 'initial',
@@ -587,11 +603,11 @@ class Book extends React.Component {
             left: '35%',
             transform: 'translateX(-50%)'
           }}
-        />
+        /> */}
         <img
           src={FOX_BEHIND}
           style={{
-            width: this.isLandscape ? '22%' : 'initial',
+            width: this.isLandscape ? '18%' : 'initial',
             height: this.isLandscape ? 'initial' : '35%',
             bottom: '2%',
             left: '30%',
@@ -711,12 +727,7 @@ class Book extends React.Component {
   render() {
     const { pageNumber, isFact } = this.props;
 
-    let scale = Math.min(this.width / 1000, this.height / 1200) - (this.isLandscape ? 0.1 : 0);
-
-    let elephantIndex = pageNumber % 3;
-    if (pageNumber === 0) {
-      elephantIndex = -1;
-    }
+    // let scale = Math.min(this.width / 1000, this.height / 1200) - (this.isLandscape ? 0.1 : 0);
 
     return (
       <div className={styles.wrapper} style={{ width: this.width, height: this.height }}>
@@ -743,51 +754,6 @@ class Book extends React.Component {
             </div>
           );
         })}
-
-        <div
-          className={`${styles.elephantBackground} ${isFact && elephantIndex == 0 ? styles.showElephant : ''}`}
-          style={{ width: this.width, height: this.height }}>
-          <div
-            className={styles.elephant}
-            style={{
-              bottom: '0px',
-              right: '0px',
-              transform: `scale(${scale}) ${isFact && elephantIndex == 0 ? 'translate(0, 0)' : 'translate(150%, 150%)'}`
-            }}>
-            <img src={ELEPHANT} />
-          </div>
-        </div>
-
-        <div
-          className={`${styles.elephantBackground} ${isFact && elephantIndex == 1 ? styles.showElephant : ''}`}
-          style={{ width: this.width, height: this.height }}>
-          <div
-            className={styles.elephant}
-            style={{
-              bottom: '0px',
-              left: '0px',
-              transformOrigin: '0% 100%',
-              transform: `scale(${scale}) ${
-                isFact && elephantIndex == 1 ? 'translate(0, 0)' : 'translate(-150%, 150%)'
-              }`
-            }}>
-            <img src={ELEPHANT2} />
-          </div>
-        </div>
-
-        <div
-          className={`${styles.elephantBackground} ${isFact && elephantIndex == 2 ? styles.showElephant : ''}`}
-          style={{ width: this.width, height: this.height }}>
-          <div
-            className={styles.elephant}
-            style={{
-              bottom: '0px',
-              right: '0px',
-              transform: `scale(${scale}) ${isFact && elephantIndex == 2 ? 'translate(0, 0)' : 'translate(150%, 150%)'}`
-            }}>
-            <img src={ELEPHANT3} />
-          </div>
-        </div>
       </div>
     );
   }

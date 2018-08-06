@@ -5,7 +5,7 @@ const Book = require('.');
 
 describe('Book', () => {
   test('It renders', () => {
-    const component = renderer.create(<Book />);
+    const component = renderer.create(<Book pages={[]} />);
 
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

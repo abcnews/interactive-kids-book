@@ -10,7 +10,15 @@ exports[`App It renders 1`] = `
     <div
       className="sgMpdhCf zteFRtuv "
     >
-      <div />
+      <div
+        className="wrapper"
+        style={
+          Object {
+            "height": 768,
+            "width": 1024,
+          }
+        }
+      />
     </div>
   </div>
 </div>
