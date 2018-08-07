@@ -73,8 +73,8 @@ class Panel extends React.Component {
         maxWidth: 'initial',
         position: 'absolute',
         width: this.isLandscape ? '70%' : '120%',
-        height: this.isLandscape ? '100%' : '60%',
-        top: this.isLandscape ? '85%' : '93%',
+        height: this.isLandscape ? '100%' : '50%',
+        top: this.isLandscape ? '85%' : '91%',
         transform: 'translate(-50%, -50%)',
         zIndex: 1
       };

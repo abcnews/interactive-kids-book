@@ -31,6 +31,7 @@ class App extends React.Component {
     return (
       <div className={styles.root}>
         <Scrollyteller
+          config={{ waypoint: 95 }}
           panels={scrollyteller.panels}
           className={`Block is-richtext is-piecemeal ${styles.scrollyteller}`}
           panelComponent={Panel}
