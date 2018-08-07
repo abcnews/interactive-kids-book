@@ -18,8 +18,7 @@ class App extends React.Component {
 
   onMarker(marker) {
     let config = {
-      pageNumber: marker.pageNumber,
-      isFact: marker.fact === true
+      pageNumber: marker.pageNumber
     };
 
     this.setState(() => ({ config }));
@@ -29,17 +28,6 @@ class App extends React.Component {
     const { scrollyteller } = this.props;
     const { config } = this.state;
 
-    // return (
-    //   <div className={styles.root}>
-    //     <Scrollyteller
-    //       panels={scrollyteller.panels}
-    //       className={`Block is-richtext is-piecemeal ${styles.scrollyteller}`}
-    //       panelClassName={`Block-content u-layout u-richtext storyPanel ${styles.panel}`}
-    //       onMarker={this.onMarker}>
-    //       <Book pages={scrollyteller.panels} pageNumber={config.pageNumber} isFact={config.isFact} />
-    //     </Scrollyteller>
-    //   </div>
-    // );
     return (
       <div className={styles.root}>
         <Scrollyteller
@@ -47,7 +35,7 @@ class App extends React.Component {
           className={`Block is-richtext is-piecemeal ${styles.scrollyteller}`}
           panelComponent={Panel}
           onMarker={this.onMarker}>
-          <Book pages={scrollyteller.panels} pageNumber={config.pageNumber} isFact={config.isFact} />
+          <Book pages={scrollyteller.panels} pageNumber={config.pageNumber} />
         </Scrollyteller>
       </div>
     );

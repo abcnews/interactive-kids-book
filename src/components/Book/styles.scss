@@ -1,5 +1,4 @@
 .wrapper {
-  // TODO: use a soft paper background
   background: #f9f9f9;
   background-image: url('./paper-pattern.png');
   perspective: 12000px;
@@ -13,7 +12,7 @@
   top: 0;
   left: 0;
   transform-origin: 0 50%;
-  transition: transform 0.3s linear;
+  transition: transform 0.5s ease-in-out;
   will-change: transform;
 
   .titlePage {
@@ -31,7 +30,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: opacity 0.3s linear;
+  transition: opacity 0.5s ease-in-out;
   will-change: opacity;
 }
 
@@ -245,7 +244,6 @@
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0);
-  // transition: background-color 0.3s ease;
 }
 
 .elephant {

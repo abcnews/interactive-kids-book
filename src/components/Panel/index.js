@@ -58,13 +58,24 @@ class Panel extends React.Component {
     let elephant;
     let src;
     let stick;
+    let elephantBg;
     if (config.fact && config.pageNumber > 2) {
       let elephantStyle = {
         maxWidth: 'initial',
         width: this.isLandscape ? '40%' : '90%',
         position: 'absolute',
-        bottom: this.isLandscape ? '0' : '7%',
+        top: this.isLandscape ? '70%' : '14%',
         transform: 'translateY(-50%)',
+        zIndex: 2
+      };
+
+      let bgStyle = {
+        maxWidth: 'initial',
+        position: 'absolute',
+        width: '80%',
+        height: '100%',
+        top: this.isLandscape ? '80%' : '14%',
+        transform: 'translate(-50%, -50%)',
         zIndex: 1
       };
 
@@ -73,28 +84,34 @@ class Panel extends React.Component {
           elephantStyle.right = '0px';
           src = require('../Book/elephant1.png');
           stick = 'stickRight';
+          bgStyle.left = '100%';
           break;
         case 1:
           elephantStyle.left = '0px';
           src = require('../Book/elephant2.png');
           stick = 'stickLeft';
+          bgStyle.left = '0%';
+          bgStyle.opacity = 0.7;
           break;
         case 2:
           elephantStyle.right = '0px';
           src = require('../Book/elephant3.png');
           stick = 'stickRight';
+          bgStyle.left = '100%';
           break;
       }
 
       elephant = <img src={src} style={elephantStyle} />;
+      elephantBg = <img src={require('./elephant-bg.png')} style={bgStyle} />;
     }
 
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} style={{ marginBottom: config.fact && config.pageNumber > 2 ? '50vh' : '0' }}>
         <div id={this.props.id} className={`${className} ${config.fact ? styles.fact : ''}`}>
           <div ref={el => (this.base = el)} />
           {config.fact && <div className={`${styles.stick} ${styles[stick]}`} />}
         </div>
+        {elephantBg}
         {elephant}
       </div>
     );

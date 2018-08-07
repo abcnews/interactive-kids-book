@@ -2,7 +2,11 @@
   position: relative;
 
   &:nth-child(2) {
-    margin-top: 105vh;
+    margin-top: 65vh;
+  }
+
+  &:last-of-type {
+    margin-bottom: 60vh !important;
   }
 }
 
@@ -25,21 +29,17 @@
   background-image: url('./balloon-background.png');
   background-size: 100% 100%;
 
-  &:nth-child(2) {
-    margin-top: 105vh;
-  }
-
-  &:last-of-type {
-    margin-bottom: 100vh;
-  }
-
   &.fact {
-    z-index: 2;
+    z-index: 4;
     background-image: url('./fact-background.png');
     background-size: 100% 100%;
+    max-width: 500px;
 
     * {
-      font-family: 'Comic Sans MS';
+      font-family: 'Gaegu', sans-serif;
+      letter-spacing: -2px;
+      font-size: 1.9rem;
+      line-height: 2rem;
     }
 
     .stick {

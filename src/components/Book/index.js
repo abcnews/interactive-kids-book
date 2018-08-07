@@ -7,7 +7,6 @@ const BEAR_TITLE_EYES_CLOSED = require('./eyes-closed.png');
 
 const BEAR = require('./bear.png');
 const BEAR_SAD = require('./bear-sad.png');
-const BEAR_EYES_ANGRY = require('./bear-angry-eyes.png');
 
 const CHICKEN = require('./chicken.png');
 const CHICKEN_BACKGROUND = require('./chicken-background.png');
@@ -15,7 +14,7 @@ const CHICKEN_CLOSER = require('./chicken-closer.png');
 
 const BEAR_LISTENING = require('./bear-listening.png');
 const OWL = require('./owl.png');
-const OWL_BACKGROUND = require('./owl-background.png');
+const FOREST_BACKGROUND = require('./owl-background.png');
 
 const BUNNY = require('./bunny.png');
 const BUNNY_BABY = require('./bunny-baby.png');
@@ -116,7 +115,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '130%' : 'initial',
@@ -163,8 +162,8 @@ class Book extends React.Component {
             maxWidth: 'initial',
             width: this.isLandscape ? '50%' : '120%',
             left: '50%',
-            transform: 'translateX(-50%)',
-            bottom: this.isLandscape ? '-100px' : '-50px'
+            transform: 'translate(-50%, -78%)',
+            top: '100%'
           }}
         />
         <img
@@ -174,8 +173,8 @@ class Book extends React.Component {
             maxWidth: 'initial',
             width: this.isLandscape ? '50%' : '120%',
             left: '50%',
-            transform: 'translateX(-50%)',
-            bottom: this.isLandscape ? '-100px' : '-30px'
+            transform: 'translate(-50%, -78%)',
+            top: '100%'
           }}
         />
         <img
@@ -185,8 +184,8 @@ class Book extends React.Component {
             maxWidth: 'initial',
             width: this.isLandscape ? '50%' : '120%',
             left: '50%',
-            transform: 'translateX(-50%)',
-            bottom: this.isLandscape ? '-100px' : '-30px'
+            transform: 'translate(-50%, -78%)',
+            top: '100%'
           }}
         />
       </div>
@@ -197,7 +196,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -225,7 +224,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -266,7 +265,7 @@ class Book extends React.Component {
         <img
           src={CHICKEN}
           style={{
-            width: this.isLandscape ? '12%' : 'initial',
+            width: this.isLandscape ? '17%' : 'initial',
             height: this.isLandscape ? 'initial' : '20%',
             left: this.isLandscape ? '20%' : '25%',
             transform: 'translateX(-50%)',
@@ -320,7 +319,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -545,7 +544,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -574,7 +573,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '100%' : 'initial',
@@ -676,7 +675,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OWL_BACKGROUND}
+          src={FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '70%' : 'initial',
@@ -725,9 +724,7 @@ class Book extends React.Component {
   }
 
   render() {
-    const { pageNumber, isFact } = this.props;
-
-    // let scale = Math.min(this.width / 1000, this.height / 1200) - (this.isLandscape ? 0.1 : 0);
+    const { pageNumber } = this.props;
 
     return (
       <div className={styles.wrapper} style={{ width: this.width, height: this.height }}>

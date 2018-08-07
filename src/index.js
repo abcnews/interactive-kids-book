@@ -2,6 +2,12 @@ require('./styles.scss');
 
 const React = require('react');
 const { render } = require('react-dom');
+const WebFont = require('webfontloader');
+WebFont.load({
+  google: {
+    families: ['Gaegu']
+  }
+});
 
 const PROJECT_NAME = 'interactive-kids-book';
 const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
