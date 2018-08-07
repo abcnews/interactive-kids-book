@@ -593,21 +593,11 @@ class Book extends React.Component {
             transform: 'translateX(-50%)'
           }}
         />
-        {/* <img
-          src={BEAR_EYES_ANGRY}
-          style={{
-            width: this.isLandscape ? '27%' : 'initial',
-            height: this.isLandscape ? 'initial' : '60%',
-            bottom: '20%',
-            left: '35%',
-            transform: 'translateX(-50%)'
-          }}
-        /> */}
         <img
           src={FOX_BEHIND}
           style={{
             width: this.isLandscape ? '18%' : 'initial',
-            height: this.isLandscape ? 'initial' : '35%',
+            height: this.isLandscape ? 'initial' : '42%',
             bottom: '2%',
             left: '30%',
             transform: 'translateX(-50%)'
@@ -693,7 +683,7 @@ class Book extends React.Component {
             width: this.isLandscape ? '7%' : 'initial',
             height: this.isLandscape ? 'initial' : '3%',
             top: '50%',
-            left: this.isLandscape ? '35%' : '20%',
+            left: this.isLandscape ? '35%' : '18%',
             transform: 'translateX(-50%)'
           }}
         />
@@ -704,7 +694,7 @@ class Book extends React.Component {
             width: this.isLandscape ? '7%' : 'initital',
             height: this.isLandscape ? 'initial' : '5%',
             top: '54%',
-            left: this.isLandscape ? '35%' : '28%',
+            left: this.isLandscape ? '35%' : '22%',
             transform: 'translateX(-50%)'
           }}
         />

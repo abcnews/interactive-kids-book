@@ -64,7 +64,7 @@ class Panel extends React.Component {
         maxWidth: 'initial',
         width: this.isLandscape ? '40%' : '90%',
         position: 'absolute',
-        top: this.isLandscape ? '70%' : '14%',
+        top: this.isLandscape ? '70%' : '80%',
         transform: 'translateY(-50%)',
         zIndex: 2
       };
@@ -72,9 +72,9 @@ class Panel extends React.Component {
       let bgStyle = {
         maxWidth: 'initial',
         position: 'absolute',
-        width: '80%',
-        height: '100%',
-        top: this.isLandscape ? '80%' : '14%',
+        width: this.isLandscape ? '70%' : '120%',
+        height: this.isLandscape ? '100%' : '60%',
+        top: this.isLandscape ? '85%' : '93%',
         transform: 'translate(-50%, -50%)',
         zIndex: 1
       };
@@ -91,7 +91,8 @@ class Panel extends React.Component {
           src = require('../Book/elephant2.png');
           stick = 'stickLeft';
           bgStyle.left = '0%';
-          bgStyle.opacity = 0.7;
+          bgStyle.opacity = 0.8;
+          bgStyle.top = this.isLandscape ? top : this.isLandscape ? '85%' : '90%';
           break;
         case 2:
           elephantStyle.right = '0px';

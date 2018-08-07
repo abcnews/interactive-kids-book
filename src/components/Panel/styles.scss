@@ -83,13 +83,15 @@
 
 @media only screen and (min-device-width: 1023px) {
   .right {
-    margin-right: calc(30% - 24.75rem) !important;
-    width: 49.5rem !important;
+    max-width: 800px;
+    width: 40%;
+    margin-left: 55%;
   }
 
   .left {
-    margin-left: calc(30% - 24.75rem) !important;
-    width: 49.5rem !important;
+    max-width: 800px;
+    width: 40%;
+    margin-right: 55%;
   }
 }
 
@@ -104,7 +106,7 @@
     width: 95% !important;
 
     p {
-      font-size: 1.125rem;
+      font-size: 1.3rem;
       line-height: 1.555555556;
       padding-left: 8%;
       padding-right: 8%;
