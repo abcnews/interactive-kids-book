@@ -1,50 +1,7 @@
 const React = require('react');
+const Images = require('./images');
+
 const styles = require('./styles.scss');
-
-const BEAR_TITLE = require('./title-bear.png');
-const BEAR_TITLE_EYES_OPEN = require('./eyes-open.png');
-const BEAR_TITLE_EYES_CLOSED = require('./eyes-closed.png');
-
-const BEAR = require('./bear.png');
-const BEAR_SAD = require('./bear-sad.png');
-
-const CHICKEN = require('./chicken.png');
-const CHICKEN_BACKGROUND = require('./chicken-background.png');
-const CHICKEN_CLOSER = require('./chicken-closer.png');
-
-const BEAR_LISTENING = require('./bear-listening.png');
-const OWL = require('./owl.png');
-const FOREST_BACKGROUND = require('./owl-background.png');
-
-const BUNNY = require('./bunny.png');
-const BUNNY_BABY = require('./bunny-baby.png');
-const BUNNY_BACKGROUND = require('./bunny-background.png');
-
-const PIG = require('./pig.png');
-const PIG_BACKGROUND = require('./pig-background.png');
-const PIG_CLOSER = require('./pig-closer.png');
-
-const MONKEY = require('./monkey.png');
-const MONKEY_THINKING = require('./monkey-thinking.png');
-const OFFICE_BACKGROUND = require('./office-background.png');
-
-const FOX = require('./fox.png');
-const FOX_BEHIND = require('./fox-behind.png');
-
-const BEAR_ROAR = require('./bear-roar.png');
-const ROAR_R1 = require('./r1.png');
-const ROAR_O1 = require('./o1.png');
-const ROAR_A1 = require('./a1.png');
-const ROAR_A2 = require('./a2.png');
-const ROAR_R2 = require('./r2.png');
-const ROAR_R3 = require('./r3.png');
-const ROAR_BANG = require('./bang.png');
-
-const BEAR_BOX = require('./bear-box.png');
-
-const BEAR_TYPING = require('./bear-typing.png');
-const TYPE_1 = require('./type1.png');
-const TYPE_2 = require('./type2.png');
 
 const TRANSFORM_PAGE_IN = `scale(1, 1)`;
 const TRANSFORM_PAGE_OUT = `scale(0, 1.5)`;
@@ -115,7 +72,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '130%' : 'initial',
@@ -137,27 +94,27 @@ class Book extends React.Component {
           }}>
           <img
             className={styles.float1}
-            src={require('./title-word-bear.png')}
+            src={Images.TITLE_WORD_BEAR}
             style={{ left: '0px', top: '0px', maxWidth: '500px' }}
           />
           <img
             className={styles.float2}
-            src={require('./title-word-finds.png')}
+            src={Images.TITLE_WORD_FINDS}
             style={{ left: '516px', top: '43px', maxWidth: '400px' }}
           />
           <img
             className={styles.float3}
-            src={require('./title-word-a.png')}
+            src={Images.TITLE_WORD_A}
             style={{ left: '182px', top: '233px', maxWidth: '100px' }}
           />
           <img
             className={styles.float4}
-            src={require('./title-word-voice.png')}
+            src={Images.TITLE_WORD_VOICE}
             style={{ left: '340px', top: '224px', maxWidth: '550px' }}
           />
         </div>
         <img
-          src={BEAR_TITLE}
+          src={Images.BEAR_TITLE}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '50%' : '120%',
@@ -167,7 +124,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_TITLE_EYES_OPEN}
+          src={Images.BEAR_TITLE_EYES_OPEN}
           className={styles.blinkingOpen}
           style={{
             maxWidth: 'initial',
@@ -178,7 +135,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_TITLE_EYES_CLOSED}
+          src={Images.BEAR_TITLE_EYES_CLOSED}
           className={styles.blinkingClosed}
           style={{
             maxWidth: 'initial',
@@ -196,7 +153,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -207,7 +164,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR}
+          src={Images.BEAR}
           style={{
             width: this.isLandscape ? 'initial' : '90%',
             height: this.isLandscape ? '70%' : 'initial',
@@ -224,7 +181,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -235,7 +192,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_SAD}
+          src={Images.BEAR_SAD}
           style={{
             width: this.isLandscape ? 'initial' : '90%',
             height: this.isLandscape ? '70%' : 'initial',
@@ -252,7 +209,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={CHICKEN_BACKGROUND}
+          src={Images.CHICKEN_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '70%' : 'initial',
@@ -263,7 +220,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={CHICKEN}
+          src={Images.CHICKEN}
           style={{
             width: this.isLandscape ? '17%' : 'initial',
             height: this.isLandscape ? 'initial' : '20%',
@@ -273,7 +230,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_LISTENING}
+          src={Images.BEAR_LISTENING}
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '80%',
@@ -290,7 +247,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={CHICKEN_BACKGROUND}
+          src={Images.CHICKEN_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -302,7 +259,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={CHICKEN_CLOSER}
+          src={Images.CHICKEN_CLOSER}
           style={{
             width: this.isLandscape ? '20%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -319,7 +276,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -331,7 +288,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={OWL}
+          src={Images.OWL}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '60%' : 'initial',
@@ -342,7 +299,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_LISTENING}
+          src={Images.BEAR_LISTENING}
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -359,7 +316,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={PIG_BACKGROUND}
+          src={Images.PIG_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -370,7 +327,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={PIG}
+          src={Images.PIG}
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -387,7 +344,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={PIG_BACKGROUND}
+          src={Images.PIG_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -398,7 +355,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={PIG_CLOSER}
+          src={Images.PIG_CLOSER}
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -415,7 +372,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={BUNNY_BACKGROUND}
+          src={Images.BUNNY_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '60%' : 'initial',
@@ -426,7 +383,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BUNNY_BABY}
+          src={Images.BUNNY_BABY}
           className={styles.babyBunny3}
           style={{
             width: this.isLandscape ? '7%' : 'initial',
@@ -438,7 +395,7 @@ class Book extends React.Component {
         />
 
         <img
-          src={BUNNY}
+          src={Images.BUNNY}
           style={{
             width: this.isLandscape ? '20%' : 'initial',
             height: this.isLandscape ? 'initial' : '48%',
@@ -449,7 +406,7 @@ class Book extends React.Component {
         />
 
         <img
-          src={BUNNY_BABY}
+          src={Images.BUNNY_BABY}
           className={styles.babyBunny1}
           style={{
             width: this.isLandscape ? '9%' : 'initial',
@@ -460,7 +417,7 @@ class Book extends React.Component {
         />
 
         <img
-          src={BUNNY_BABY}
+          src={Images.BUNNY_BABY}
           className={styles.babyBunny2}
           style={{
             width: this.isLandscape ? '8%' : 'initial',
@@ -477,7 +434,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OFFICE_BACKGROUND}
+          src={Images.OFFICE_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '70%' : 'initial',
@@ -488,7 +445,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={MONKEY}
+          src={Images.MONKEY}
           className={styles.monkey}
           style={{
             width: this.isLandscape ? '23%' : 'initial',
@@ -498,7 +455,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_LISTENING}
+          src={Images.BEAR_LISTENING}
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -515,7 +472,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={OFFICE_BACKGROUND}
+          src={Images.OFFICE_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '120%' : 'initial',
@@ -527,7 +484,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={MONKEY_THINKING}
+          src={Images.MONKEY_THINKING}
           style={{
             width: this.isLandscape ? '35%' : 'initial',
             height: this.isLandscape ? 'intital' : '90%',
@@ -544,7 +501,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '90%' : 'initial',
@@ -556,7 +513,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={FOX}
+          src={Images.FOX}
           style={{
             width: this.isLandscape ? '25%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -573,7 +530,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '100%' : 'initial',
@@ -584,7 +541,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR}
+          src={Images.BEAR}
           style={{
             width: this.isLandscape ? '27%' : 'initial',
             height: this.isLandscape ? 'initial' : '60%',
@@ -594,7 +551,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={FOX_BEHIND}
+          src={Images.FOX_BEHIND}
           style={{
             width: this.isLandscape ? '18%' : 'initial',
             height: this.isLandscape ? 'initial' : '42%',
@@ -619,16 +576,20 @@ class Book extends React.Component {
             width: '690px',
             height: '200px'
           }}>
-          <img src={ROAR_R1} className={styles.jiggle1} style={{ width: '180px', top: '40px', left: '0px' }} />
-          <img src={ROAR_O1} className={styles.jiggle2} style={{ width: '120px', top: '20px', left: '140px' }} />
-          <img src={ROAR_A1} className={styles.jiggle3} style={{ width: '80px', top: '5px', left: '260px' }} />
-          <img src={ROAR_A2} className={styles.jiggle1} style={{ width: '90px', top: '0px', left: '340px' }} />
-          <img src={ROAR_R2} className={styles.jiggle3} style={{ width: '100px', top: '0px', left: '440px' }} />
-          <img src={ROAR_R3} className={styles.jiggle2} style={{ width: '100px', top: '10px', left: '540px' }} />
-          <img src={ROAR_BANG} className={styles.jiggle1} style={{ width: '60px', top: '20px', left: '630px' }} />
+          <img src={Images.ROAR_R1} className={styles.jiggle1} style={{ width: '180px', top: '40px', left: '0px' }} />
+          <img src={Images.ROAR_O1} className={styles.jiggle2} style={{ width: '120px', top: '20px', left: '140px' }} />
+          <img src={Images.ROAR_A1} className={styles.jiggle3} style={{ width: '80px', top: '5px', left: '260px' }} />
+          <img src={Images.ROAR_A2} className={styles.jiggle1} style={{ width: '90px', top: '0px', left: '340px' }} />
+          <img src={Images.ROAR_R2} className={styles.jiggle3} style={{ width: '100px', top: '0px', left: '440px' }} />
+          <img src={Images.ROAR_R3} className={styles.jiggle2} style={{ width: '100px', top: '10px', left: '540px' }} />
+          <img
+            src={Images.ROAR_BANG}
+            className={styles.jiggle1}
+            style={{ width: '60px', top: '20px', left: '630px' }}
+          />
         </div>
         <img
-          src={BEAR_ROAR}
+          src={Images.BEAR_ROAR}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '55%' : 'initial',
@@ -646,7 +607,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={BEAR_BOX}
+          src={Images.BEAR_BOX}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '30%' : 'initial',
@@ -665,7 +626,7 @@ class Book extends React.Component {
     return (
       <div>
         <img
-          src={FOREST_BACKGROUND}
+          src={Images.FOREST_BACKGROUND}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '70%' : 'initial',
@@ -677,7 +638,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={TYPE_1}
+          src={Images.TYPE_1}
           className={styles.typing1}
           style={{
             width: this.isLandscape ? '7%' : 'initial',
@@ -688,7 +649,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={TYPE_2}
+          src={Images.TYPE_2}
           className={styles.typing2}
           style={{
             width: this.isLandscape ? '7%' : 'initital',
@@ -699,7 +660,7 @@ class Book extends React.Component {
           }}
         />
         <img
-          src={BEAR_TYPING}
+          src={Images.BEAR_TYPING}
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '30%' : 'initial',

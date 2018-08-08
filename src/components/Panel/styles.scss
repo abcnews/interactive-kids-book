@@ -26,12 +26,11 @@
 
   max-width: 800px;
 
-  background-image: url('./balloon-background.png');
+  background-image: url('./Images/balloon-background.png');
   background-size: 100% 100%;
-
   &.fact {
     z-index: 4;
-    background-image: url('./fact-background.png');
+    background-image: url('./Images/fact-background.png');
     background-size: 100% 100%;
     max-width: 500px;
 
@@ -52,12 +51,12 @@
     }
 
     .stickRight {
-      background: url('./stick-right.png') no-repeat top left;
+      background: url('./Images/stick-right.png') no-repeat top left;
       left: 60%;
     }
 
     .stickLeft {
-      background: url('./stick-left.png') no-repeat top left;
+      background: url('./Images/stick-left.png') no-repeat top left;
       left: 40%;
     }
   }

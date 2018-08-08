@@ -1,5 +1,5 @@
 const React = require('react');
-
+const Images = require('./images');
 const styles = require('./styles.scss');
 
 class Panel extends React.Component {
@@ -82,13 +82,13 @@ class Panel extends React.Component {
       switch (config.pageNumber % 3) {
         case 0:
           elephantStyle.right = '0px';
-          src = require('../Book/elephant1.png');
+          src = Images.ELEPHANT_1;
           stick = 'stickRight';
           bgStyle.left = '100%';
           break;
         case 1:
           elephantStyle.left = '0px';
-          src = require('../Book/elephant2.png');
+          src = Images.ELEPHANT_2;
           stick = 'stickLeft';
           bgStyle.left = '0%';
           bgStyle.opacity = 0.8;
@@ -96,14 +96,14 @@ class Panel extends React.Component {
           break;
         case 2:
           elephantStyle.right = '0px';
-          src = require('../Book/elephant3.png');
+          src = Images.ELEPHANT_3;
           stick = 'stickRight';
           bgStyle.left = '100%';
           break;
       }
 
       elephant = <img src={src} style={elephantStyle} />;
-      elephantBg = <img src={require('./elephant-bg.png')} style={bgStyle} />;
+      elephantBg = <img src={Images.ELEPHANT_BG} style={bgStyle} />;
     }
 
     return (
