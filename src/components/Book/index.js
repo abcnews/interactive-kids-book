@@ -674,6 +674,10 @@ class Book extends React.Component {
     );
   }
 
+  _end() {
+    return <div>the end...</div>;
+  }
+
   render() {
     const { pageNumber } = this.props;
 

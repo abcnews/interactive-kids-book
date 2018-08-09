@@ -28,11 +28,14 @@
 
   background-image: url('./Images/balloon-background.png');
   background-size: 100% 100%;
+
   &.fact {
     z-index: 4;
-    background-image: url('./Images/fact-background.png');
-    background-size: 100% 100%;
+    background: none;
     max-width: 500px;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
 
     * {
       font-family: 'Gaegu', sans-serif;
@@ -41,9 +44,26 @@
       line-height: 2rem;
     }
 
+    .factPanelTop {
+      height: 40px;
+      background: url('./Images/fact-background-top.png') no-repeat top center;
+      background-size: 100% 100%;
+    }
+
+    .factPanelMiddle {
+      background: url('./Images/fact-background-middle.png') no-repeat top center;
+      background-size: 100% 100%;
+    }
+
+    .factPanelBottom {
+      height: 140px;
+      background: url('./Images/fact-background-bottom.png') no-repeat top center;
+      background-size: 100% 100%;
+    }
+
     .stick {
       position: absolute;
-      top: calc(100% - 3px);
+      top: calc(100% - 107px);
       left: 50%;
       width: 100px;
       height: 100px;
@@ -52,12 +72,12 @@
 
     .stickRight {
       background: url('./Images/stick-right.png') no-repeat top left;
-      left: 60%;
+      left: 80%;
     }
 
     .stickLeft {
       background: url('./Images/stick-left.png') no-repeat top left;
-      left: 40%;
+      left: 20%;
     }
   }
 
@@ -94,7 +114,7 @@
   }
 }
 
-@media only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-device-width: 667px) {
   .base {
     margin-right: auto !important;
     margin-left: auto !important;
@@ -102,7 +122,7 @@
     padding-top: 8%;
     padding-bottom: 8%;
 
-    width: 95% !important;
+    width: 92% !important;
 
     p {
       font-size: 1.3rem;
@@ -113,17 +133,21 @@
 
     &.fact {
       .stick {
-        width: 50px;
-        height: 50px;
-        background-size: 50px 50px;
+        width: 75px;
+        height: 75px;
+        background-size: 75px 75px;
       }
 
       .stickLeft {
-        left: 80%;
+        background-image: url('./Images/stick-right.png') !important;
+        left: 18%;
+        top: calc(100% - 106px);
       }
 
       .stickRight {
-        left: 20%;
+        background-image: url('./Images/stick-left.png') !important;
+        left: 82%;
+        top: calc(100% - 108px);
       }
     }
   }

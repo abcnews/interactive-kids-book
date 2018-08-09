@@ -55,11 +55,10 @@ class Panel extends React.Component {
       .filter(c => c)
       .join(' ');
 
-    let elephant;
-    let src;
-    let stick;
-    let elephantBg;
     if (config.fact && config.pageNumber > 2) {
+      let src;
+      let stick;
+
       let elephantStyle = {
         maxWidth: 'initial',
         width: this.isLandscape ? '40%' : '90%',
@@ -102,18 +101,27 @@ class Panel extends React.Component {
           break;
       }
 
-      elephant = <img src={src} style={elephantStyle} />;
-      elephantBg = <img src={Images.ELEPHANT_BG} style={bgStyle} />;
+      return (
+        <div className={styles.wrapper} style={{ marginBottom: config.fact && config.pageNumber > 2 ? '50vh' : '0' }}>
+          <div id={this.props.id} className={`${className} ${config.fact ? styles.fact : ''}`}>
+            <div className={styles.factPanelTop} />
+            <div className={styles.factPanelMiddle}>
+              <div ref={el => (this.base = el)} />
+            </div>
+            <div className={styles.factPanelBottom} />
+            <div className={`${styles.stick} ${styles[stick]}`} />
+          </div>
+          <img src={Images.ELEPHANT_BG} style={bgStyle} />
+          <img src={src} style={elephantStyle} />
+        </div>
+      );
     }
 
     return (
-      <div className={styles.wrapper} style={{ marginBottom: config.fact && config.pageNumber > 2 ? '50vh' : '0' }}>
-        <div id={this.props.id} className={`${className} ${config.fact ? styles.fact : ''}`}>
+      <div className={styles.wrapper}>
+        <div id={this.props.id} className={className}>
           <div ref={el => (this.base = el)} />
-          {config.fact && <div className={`${styles.stick} ${styles[stick]}`} />}
         </div>
-        {elephantBg}
-        {elephant}
       </div>
     );
   }
