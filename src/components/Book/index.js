@@ -53,6 +53,10 @@ class Book extends React.Component {
     this.forceUpdate();
   }
 
+  _start() {
+    return <div>Inside title page</div>;
+  }
+
   _title() {
     let titleWidth;
     let titleTop;

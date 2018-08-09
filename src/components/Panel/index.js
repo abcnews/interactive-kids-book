@@ -118,7 +118,9 @@ class Panel extends React.Component {
     }
 
     return (
-      <div className={styles.wrapper}>
+      <div
+        className={styles.wrapper}
+        style={config.page === 'title' ? { display: 'none', marginTop: '0', marginBottom: '0' } : {}}>
         <div id={this.props.id} className={className}>
           <div ref={el => (this.base = el)} />
         </div>

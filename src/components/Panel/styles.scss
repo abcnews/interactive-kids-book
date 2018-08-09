@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
 
-  &:nth-child(2) {
+  &:nth-child(3) {
     margin-top: 65vh;
   }
 
@@ -63,7 +63,6 @@
 
     .stick {
       position: absolute;
-      top: calc(100% - 107px);
       left: 50%;
       width: 100px;
       height: 100px;
@@ -72,11 +71,13 @@
 
     .stickRight {
       background: url('./Images/stick-right.png') no-repeat top left;
+      top: calc(100% - 107px);
       left: 80%;
     }
 
     .stickLeft {
       background: url('./Images/stick-left.png') no-repeat top left;
+      top: calc(100% - 106px);
       left: 20%;
     }
   }
