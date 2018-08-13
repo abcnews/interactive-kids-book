@@ -205,8 +205,9 @@ class Book extends React.Component {
         <img
           src={Images.BEAR}
           style={{
-            width: this.isLandscape ? 'initial' : '90%',
-            height: this.isLandscape ? '70%' : 'initial',
+            maxWidth: 'initial',
+            width: this.isLandscape ? '30%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
             bottom: '3%',
             left: '50%',
             transform: 'translateX(-50%)'
@@ -233,8 +234,9 @@ class Book extends React.Component {
         <img
           src={Images.BEAR_SAD}
           style={{
-            width: this.isLandscape ? 'initial' : '90%',
-            height: this.isLandscape ? '70%' : 'initial',
+            maxWidth: 'initial',
+            width: this.isLandscape ? '30%' : 'initial',
+            height: this.isLandscape ? 'initial' : '80%',
             bottom: '3%',
             left: '50%',
             transform: 'translateX(-50%)'

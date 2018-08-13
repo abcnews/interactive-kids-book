@@ -238,36 +238,6 @@
   }
 }
 
-.elephantBackground {
-  position: absolute;
-  z-index: 1000;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.elephant {
-  transform-origin: 100% 100%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 1000px;
-  height: 1000px;
-  transition: transform 0.3s ease-in-out;
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1000px;
-    height: 1000px;
-  }
-}
-
-.showElephant {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
 .blinkingOpen {
   animation-name: blinkingOpen;
   animation-duration: 5s;

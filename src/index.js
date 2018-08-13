@@ -9,9 +9,6 @@ WebFont.load({
   }
 });
 
-const PROJECT_NAME = 'interactive-kids-book';
-const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
-
 const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('book', 'u-full', 'mark');
 
 let pageNumber = 0;
@@ -37,8 +34,4 @@ if (window.__ODYSSEY__) {
   init();
 } else {
   window.addEventListener('odyssey:api', init);
-}
-
-if (process.env.NODE_ENV === 'development') {
-  console.debug(`[${PROJECT_NAME}] public path: ${__webpack_public_path__}`);
 }
