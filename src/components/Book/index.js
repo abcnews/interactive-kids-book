@@ -53,10 +53,6 @@ class Book extends React.Component {
     this.forceUpdate();
   }
 
-  _start() {
-    return <div>Inside title page</div>;
-  }
-
   _title() {
     let titleWidth;
     let titleTop;
@@ -96,6 +92,27 @@ class Book extends React.Component {
             left: '50%',
             transform: `translateX(-50%) scale(${titleWidth})`
           }}>
+          <img
+            src={Images.FLOWER_1}
+            className={styles.rotate2}
+            style={{
+              width: this.isLandscape ? '130px' : '180px',
+              left: this.isLandscape ? '-150px' : '120px',
+              top: this.isLandscape ? '-20px' : '-190px',
+              opacity: 0.9
+            }}
+          />
+          <img
+            src={Images.FLOWER_2}
+            className={styles.rotate2}
+            style={{
+              width: this.isLandscape ? '120px' : '180px',
+              right: this.isLandscape ? '-100px' : '20px',
+              bottom: this.isLandscape ? '-30px' : '-120px',
+              animationDirection: 'reverse',
+              opacity: 0.9
+            }}
+          />
           <img
             className={styles.float1}
             src={Images.TITLE_WORD_BEAR}
@@ -147,6 +164,24 @@ class Book extends React.Component {
             left: '50%',
             transform: 'translate(-50%, -78%)',
             top: '100%'
+          }}
+        />
+      </div>
+    );
+  }
+
+  _start() {
+    return (
+      <div>
+        <img
+          src={Images.MAP}
+          style={{
+            maxWidth: 'initial',
+            width: this.isLandscape ? '80%' : '105%',
+            top: this.isLandscape ? '50%' : '30%',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            opacity: 0.8
           }}
         />
       </div>
@@ -679,7 +714,60 @@ class Book extends React.Component {
   }
 
   _end() {
-    return <div>the end...</div>;
+    let titleWidth;
+    let titleTop;
+    if (this.isLandscape) {
+      if (this.width < 916) {
+        titleTop = '-28%';
+        titleWidth = this.width / 916 - 0.2;
+      } else {
+        titleTop = '10%';
+        titleWidth = 1;
+      }
+    } else {
+      titleTop = '5%';
+      titleWidth = this.width / 916 - 0.05;
+    }
+
+    return (
+      <div>
+        <div
+          style={{
+            position: 'absolute',
+            width: '916px',
+            height: '474px',
+            top: titleTop,
+            left: '50%',
+            transform: `translateX(-50%) scale(${titleWidth})`
+          }}>
+          <img src={Images.END_THE} className={styles.float1} style={{ left: '100px', top: '50px', width: '320px' }} />
+          <img src={Images.END_END} className={styles.float2} style={{ left: '450px', top: '90px', width: '350px' }} />
+        </div>
+        <img
+          src={Images.FLOWER_1}
+          className={styles.bee2}
+          style={{
+            width: this.isLandscape ? '5%' : '20%',
+            top: this.isLandscape ? '60%' : '62%',
+            left: this.isLandscape ? '40%' : '28%'
+          }}
+        />
+        <img
+          src={Images.FLOWER_2}
+          className={styles.bee2}
+          style={{
+            width: this.isLandscape ? '5%' : '20%',
+            top: this.isLandscape ? '55%' : '50%',
+            left: this.isLandscape ? '35%' : '20%'
+          }}
+        />
+        <img
+          src={Images.BEE}
+          className={styles.bee}
+          style={{ width: this.isLandscape ? '5%' : '20%', top: '50%', left: '60%' }}
+        />
+      </div>
+    );
   }
 
   render() {

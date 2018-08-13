@@ -39,17 +39,6 @@ if (window.__ODYSSEY__) {
   window.addEventListener('odyssey:api', init);
 }
 
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    try {
-      init();
-    } catch (err) {
-      const ErrorBox = require('./components/ErrorBox');
-      render(<ErrorBox error={err} />, root);
-    }
-  });
-}
-
 if (process.env.NODE_ENV === 'development') {
   console.debug(`[${PROJECT_NAME}] public path: ${__webpack_public_path__}`);
 }
