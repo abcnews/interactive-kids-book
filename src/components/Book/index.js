@@ -65,7 +65,7 @@ class Book extends React.Component {
         titleWidth = 1;
       }
     } else {
-      titleTop = '5%';
+      titleTop = '4%';
       titleWidth = this.width / 916 - 0.05;
     }
 
