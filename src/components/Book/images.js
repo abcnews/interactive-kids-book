@@ -3,10 +3,10 @@ module.exports = {
   TITLE_WORD_FINDS: require('./Images/title-word-finds.png'),
   TITLE_WORD_A: require('./Images/title-word-a.png'),
   TITLE_WORD_VOICE: require('./Images/title-word-voice.png'),
+  LEAF_1: require('./Images/leaf1.png'),
+  LEAF_2: require('./Images/leaf2.png'),
   FLOWER_1: require('./Images/flower1.png'),
   FLOWER_2: require('./Images/flower2.png'),
-
-  MAP: require('./Images/map.png'),
 
   BEAR_TITLE: require('./Images/title-bear.png'),
   BEAR_TITLE_EYES_OPEN: require('./Images/eyes-open.png'),
@@ -51,9 +51,5 @@ module.exports = {
 
   BEAR_TYPING: require('./Images/bear-typing.png'),
   TYPE_1: require('./Images/type1.png'),
-  TYPE_2: require('./Images/type2.png'),
-
-  END_THE: require('./Images/end-the.png'),
-  END_END: require('./Images/end-end.png'),
-  BEE: require('./Images/bee.png')
+  TYPE_2: require('./Images/type2.png')
 };

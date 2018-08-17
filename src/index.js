@@ -11,7 +11,7 @@ WebFont.load({
 
 const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('book', 'u-full', 'mark');
 
-let pageNumber = 0;
+let pageNumber = 1;
 scrollyteller.panels = scrollyteller.panels.map(panel => {
   if (panel.config.fact) {
     if (panel.id > 1) {
@@ -24,6 +24,30 @@ scrollyteller.panels = scrollyteller.panels.map(panel => {
   }
   return panel;
 });
+
+scrollyteller.panels = [
+  {
+    id: -1,
+    config: {
+      page: 'title',
+      pageNumber: 1
+    },
+    nodes: []
+  }
+].concat(scrollyteller.panels);
+
+// inject the title page image
+let img = document.createElement('img');
+img.src = require('./components/Book/Images/map.png');
+scrollyteller.panels[1].nodes = [img].concat(scrollyteller.panels[1].nodes);
+scrollyteller.panels[1].config.hideBackground = true;
+
+// inject the end image
+let endImg = document.createElement('img');
+endImg.src = require('./the-end.png');
+let lastIndex = scrollyteller.panels.length - 1;
+scrollyteller.panels[lastIndex].nodes = [endImg].concat(scrollyteller.panels[lastIndex].nodes);
+scrollyteller.panels[lastIndex].config.hideBackground = true;
 
 function init() {
   const App = require('./components/App');

@@ -61,7 +61,7 @@ class Panel extends React.Component {
 
       let elephantStyle = {
         maxWidth: 'initial',
-        width: this.isLandscape ? '40%' : '90%',
+        width: this.isLandscape ? '35%' : '90%',
         position: 'absolute',
         top: this.isLandscape ? '70%' : '80%',
         transform: 'translateY(-50%)',
@@ -111,17 +111,19 @@ class Panel extends React.Component {
             <div className={styles.factPanelBottom} />
             <div className={`${styles.stick} ${styles[stick]}`} />
           </div>
-          <img src={Images.ELEPHANT_BG} style={bgStyle} />
           <img src={src} style={elephantStyle} />
         </div>
       );
     }
 
+    let styleOverride;
+    if (config.page === 'title') {
+      styleOverride = { display: 'none', marginTop: '0', marginBottom: '0' };
+    }
+
     return (
-      <div
-        className={styles.wrapper}
-        style={config.page === 'title' ? { display: 'none', marginTop: '0', marginBottom: '0' } : {}}>
-        <div id={this.props.id} className={className}>
+      <div className={styles.wrapper} style={styleOverride}>
+        <div id={this.props.id} className={className} style={config.hideBackground ? { background: 'none' } : {}}>
           <div ref={el => (this.base = el)} />
         </div>
       </div>

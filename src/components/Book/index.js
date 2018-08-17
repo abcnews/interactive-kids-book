@@ -93,24 +93,23 @@ class Book extends React.Component {
             transform: `translateX(-50%) scale(${titleWidth})`
           }}>
           <img
-            src={Images.FLOWER_1}
-            className={styles.rotate2}
+            src={Images.LEAF_1}
             style={{
-              width: this.isLandscape ? '130px' : '180px',
-              left: this.isLandscape ? '-150px' : '120px',
-              top: this.isLandscape ? '-20px' : '-190px',
-              opacity: 0.9
+              width: this.isLandscape ? '250px' : '180px',
+              left: this.isLandscape ? '-240px' : '120px',
+              top: this.isLandscape ? '-60px' : '-190px',
+              opacity: 0.9,
+              transform: 'rotate(-40deg)'
             }}
           />
           <img
-            src={Images.FLOWER_2}
-            className={styles.rotate2}
+            src={Images.LEAF_2}
             style={{
-              width: this.isLandscape ? '120px' : '180px',
-              right: this.isLandscape ? '-100px' : '20px',
+              width: this.isLandscape ? '180px' : '180px',
+              right: this.isLandscape ? '-200px' : '20px',
               bottom: this.isLandscape ? '-30px' : '-120px',
               animationDirection: 'reverse',
-              opacity: 0.9
+              opacity: 0.7
             }}
           />
           <img
@@ -171,21 +170,7 @@ class Book extends React.Component {
   }
 
   _start() {
-    return (
-      <div>
-        <img
-          src={Images.MAP}
-          style={{
-            maxWidth: 'initial',
-            width: this.isLandscape ? '80%' : '105%',
-            top: this.isLandscape ? '50%' : '30%',
-            left: '50%',
-            transform: 'translate(-50%,-50%)',
-            opacity: 0.8
-          }}
-        />
-      </div>
-    );
+    return <div />;
   }
 
   _bear() {
@@ -207,7 +192,7 @@ class Book extends React.Component {
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '30%' : 'initial',
-            height: this.isLandscape ? 'initial' : '80%',
+            height: this.isLandscape ? 'initial' : '60%',
             bottom: '3%',
             left: '50%',
             transform: 'translateX(-50%)'
@@ -236,7 +221,7 @@ class Book extends React.Component {
           style={{
             maxWidth: 'initial',
             width: this.isLandscape ? '30%' : 'initial',
-            height: this.isLandscape ? 'initial' : '80%',
+            height: this.isLandscape ? 'initial' : '70%',
             bottom: '3%',
             left: '50%',
             transform: 'translateX(-50%)'
@@ -716,60 +701,7 @@ class Book extends React.Component {
   }
 
   _end() {
-    let titleWidth;
-    let titleTop;
-    if (this.isLandscape) {
-      if (this.width < 916) {
-        titleTop = '-28%';
-        titleWidth = this.width / 916 - 0.2;
-      } else {
-        titleTop = '10%';
-        titleWidth = 1;
-      }
-    } else {
-      titleTop = '5%';
-      titleWidth = this.width / 916 - 0.05;
-    }
-
-    return (
-      <div>
-        <div
-          style={{
-            position: 'absolute',
-            width: '916px',
-            height: '474px',
-            top: titleTop,
-            left: '50%',
-            transform: `translateX(-50%) scale(${titleWidth})`
-          }}>
-          <img src={Images.END_THE} className={styles.float1} style={{ left: '100px', top: '50px', width: '320px' }} />
-          <img src={Images.END_END} className={styles.float2} style={{ left: '450px', top: '90px', width: '350px' }} />
-        </div>
-        <img
-          src={Images.FLOWER_1}
-          className={styles.bee2}
-          style={{
-            width: this.isLandscape ? '5%' : '20%',
-            top: this.isLandscape ? '60%' : '62%',
-            left: this.isLandscape ? '40%' : '28%'
-          }}
-        />
-        <img
-          src={Images.FLOWER_2}
-          className={styles.bee2}
-          style={{
-            width: this.isLandscape ? '5%' : '20%',
-            top: this.isLandscape ? '55%' : '50%',
-            left: this.isLandscape ? '35%' : '20%'
-          }}
-        />
-        <img
-          src={Images.BEE}
-          className={styles.bee}
-          style={{ width: this.isLandscape ? '5%' : '20%', top: '50%', left: '60%' }}
-        />
-      </div>
-    );
+    return <div />;
   }
 
   render() {
