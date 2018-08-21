@@ -61,7 +61,7 @@ class Panel extends React.Component {
 
       let elephantStyle = {
         maxWidth: 'initial',
-        width: this.isLandscape ? '35%' : '90%',
+        width: this.isLandscape ? '32%' : '88%',
         position: 'absolute',
         top: this.isLandscape ? '70%' : '80%',
         transform: 'translateY(-50%)',
@@ -78,7 +78,18 @@ class Panel extends React.Component {
         zIndex: 1
       };
 
-      switch (config.pageNumber % 3) {
+      let whichElephant = config.pageNumber % 3;
+
+      if (
+        config.page === 'monkeythinking' ||
+        config.page === 'fox' ||
+        config.page === 'pig' ||
+        config.page === 'pigcloser'
+      ) {
+        whichElephant = 1;
+      }
+
+      switch (whichElephant) {
         case 0:
           elephantStyle.right = '0px';
           src = Images.ELEPHANT_1;
@@ -87,6 +98,7 @@ class Panel extends React.Component {
           break;
         case 1:
           elephantStyle.left = '0px';
+          elephantStyle.width = this.isLandscape ? '35%' : '90%';
           src = Images.ELEPHANT_2;
           stick = 'stickLeft';
           bgStyle.left = '0%';
