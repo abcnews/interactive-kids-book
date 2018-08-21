@@ -20,6 +20,17 @@ class Panel extends React.Component {
     if (!this.props.nodes) return;
 
     this.props.nodes.forEach(node => {
+      if (node && node.hasAttribute('height')) {
+        node.removeAttribute('height');
+      }
+
+      if (node && node.className === 'inline-content infographic full') {
+        let anchor = node.querySelector('a');
+        if (anchor) {
+          anchor.removeAttribute('href');
+        }
+      }
+
       this.base.appendChild(node);
     });
 
@@ -135,8 +146,11 @@ class Panel extends React.Component {
 
     return (
       <div className={styles.wrapper} style={styleOverride}>
-        <div id={this.props.id} className={className} style={config.hideBackground ? { background: 'none' } : {}}>
-          <div ref={el => (this.base = el)} />
+        <div
+          id={this.props.id}
+          className={className}
+          style={config.hideBackground ? { background: 'none', textAlign: 'center' } : {}}>
+          <div ref={el => (this.base = el)} className={styles.special} />
         </div>
       </div>
     );

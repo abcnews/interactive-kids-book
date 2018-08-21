@@ -25,6 +25,31 @@
   background-image: url('./Images/balloon-background.png');
   background-size: 100% 100%;
 
+  img {
+    max-width: 100%;
+    max-height: initial;
+    margin: auto;
+  }
+
+  .special {
+    h2 {
+      margin-top: 40px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin: 10px auto 40px auto;
+      font-size: 1.375rem;
+
+      li {
+        background: none;
+        margin: 0 0 1rem 0;
+        padding: 0;
+      }
+    }
+  }
+
   &.fact {
     z-index: 4;
     background: none;
@@ -33,11 +58,14 @@
     padding-top: 0px;
     padding-bottom: 0px;
 
+    em {
+      font-style: normal !important;
+    }
+
     * {
-      font-family: 'Gaegu', sans-serif;
-      letter-spacing: -2px;
-      font-size: 1.9rem;
-      line-height: 2rem;
+      font-family: 'Schoolbell', sans-serif;
+      font-size: 1.8rem;
+      line-height: 2.3rem;
     }
 
     .factPanelTop {
@@ -142,7 +170,7 @@
       .stickLeft {
         background-image: url('./Images/stick-right.png') !important;
         left: 18%;
-        top: calc(100% - 107px);
+        top: calc(100% - 109px);
       }
 
       .stickRight {
