@@ -16,12 +16,20 @@
       width: 100%;
       height: 100%;
     }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   </style>
 </head>
 
 <body>
   <a id="link">
-    <img src="./background.jpg" />
+    <img id="background" src="./background.jpg" />
+    <img id="open" src="./eyes-open.png" />
+    <img id="closed" src="./eyes-closed.png" />
   </a>
   <script>
     (function (linkParamURLDelimiter, locationURL) {
@@ -31,6 +39,11 @@
         link.href = linkURL;
       }
     })('originalLinkTarget=', String(window.location));
+
+    [].slice.call(document.querySelector('img')).forEach(img => {
+      img.width = window.innerWidth + 'px';
+      img.height = window.innerHeight + 'px';
+    })
   </script>
 </body>
 
