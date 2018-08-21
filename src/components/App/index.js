@@ -30,6 +30,9 @@ class App extends React.Component {
 
     return (
       <div className={styles.root}>
+        <a href="/news/" className={styles.logo}>
+          <img src={require('./logo.svg')} alt="ABC News homepage" />
+        </a>
         <Scrollyteller
           config={{ waypoint: 95 }}
           panels={scrollyteller.panels}

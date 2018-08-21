@@ -19,3 +19,27 @@
     margin-bottom: 100vh !important;
   }
 }
+
+.logo {
+  img {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    width: 100px;
+    z-index: 1000;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 667px) {
+  .logo {
+    display: none;
+  }
+}
