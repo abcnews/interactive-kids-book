@@ -712,7 +712,7 @@ class Book extends React.Component {
         {this.pages.map((page, index) => {
           const isCurrentPage = pageNumber <= page.pageNumber;
 
-          if (page.pageNumber > pageNumber + 2) return;
+          if (page.pageNumber > pageNumber + 2 || page.pageNumber < pageNumber - 2) return;
 
           return (
             <div
