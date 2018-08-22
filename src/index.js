@@ -10,6 +10,9 @@ WebFont.load({
 });
 
 function init() {
+  let share = document.querySelector('.Share');
+  share.parentElement.removeChild(share);
+
   const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('book', 'u-full', 'mark');
 
   let pageNumber = 1;
@@ -44,7 +47,9 @@ function init() {
   let img = document.createElement('img');
   img.src = require('./components/Book/Images/map.png');
 
-  const newNodes = [byline, published, updated, img].filter(n => n);
+  console.log('SHARE?', share);
+
+  const newNodes = [byline, published, updated, share, img].filter(n => n);
   scrollyteller.panels[1].nodes = newNodes.concat(scrollyteller.panels[1].nodes);
   scrollyteller.panels[1].config.hideBackground = true;
 

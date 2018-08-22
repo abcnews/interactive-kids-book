@@ -9,3 +9,8 @@
 :global(.Nav) {
   display: none;
 }
+
+:global(.Share) {
+  margin: 20px auto;
+  max-width: 200px;
+}
