@@ -12,14 +12,14 @@
   },
   "scripts": {
     "start": "aunty serve",
-    "test": "aunty test"
+    "test": "aunty test --testURL \"http://localhost/\""
   },
   "devDependencies": {
     "@abcnews/aunty": "^9.5.1",
     "react-test-renderer": "^16.4.1"
   },
   "dependencies": {
-    "@abcnews/scrollyteller": "^1.1.1",
+    "@abcnews/scrollyteller": "^1.1.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "webfontloader": "^1.6.28"

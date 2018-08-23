@@ -47,8 +47,6 @@ function init() {
   let img = document.createElement('img');
   img.src = require('./components/Book/Images/map.png');
 
-  console.log('SHARE?', share);
-
   const newNodes = [byline, published, updated, share, img].filter(n => n);
   scrollyteller.panels[1].nodes = newNodes.concat(scrollyteller.panels[1].nodes);
   scrollyteller.panels[1].config.hideBackground = true;
