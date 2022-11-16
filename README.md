@@ -6,4 +6,5 @@ The article that this is attached to can be found at [http://www.abc.net.au/news
 
 ## Authors
 
-- Nathan Hoad - [hoad.nathan@abc.net.au](mailto:hoad.nathan@abc.net.au)
+- Nathan Hoad
+- [Joshua Byrd](https://github.com/phocks)
