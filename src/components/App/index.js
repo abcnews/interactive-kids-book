@@ -37,6 +37,8 @@ class App extends React.Component {
 
         const offsetNumber = parseInt(offsetString, 10);
 
+        if (typeof offsetNumber !== "number") return;
+
         window.scrollTo({ top: offsetNumber, left: 0, behavior: "smooth" });
       }
     });
