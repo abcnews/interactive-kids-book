@@ -1,29 +1,29 @@
 {
-  "name": "interactive-kids-book",
-  "version": "1.0.9",
-  "description": "A project generated from aunty's react app template.",
-  "license": "MIT",
-  "private": true,
-  "contributors": [
-    "Nathan Hoad <nathan@nathanhoad.net>"
-  ],
-  "aunty": {
-    "type": "react"
-  },
-  "scripts": {
-    "start": "aunty serve",
-    "test": "aunty test --testURL \"http://localhost/\""
-  },
-  "devDependencies": {
-    "react-test-renderer": "^16.4.1"
-  },
-  "dependencies": {
-    "@abcnews/aunty": "^13.1.0",
-    "@abcnews/mount-utils": "^2.0.0",
-    "@abcnews/scrollyteller": "^1.1.3",
-    "@babel/preset-react": "^7.18.6",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "webfontloader": "^1.6.28"
-  }
+	"name": "interactive-kids-book",
+	"version": "2.0.0",
+	"description": "A project generated from aunty's react app template.",
+	"license": "MIT",
+	"private": true,
+	"contributors": [
+		"Nathan Hoad <nathan@nathanhoad.net>"
+	],
+	"aunty": {
+		"type": "react"
+	},
+	"scripts": {
+		"start": "aunty serve",
+		"test": "aunty test --testURL \"http://localhost/\""
+	},
+	"devDependencies": {
+		"react-test-renderer": "^16.4.1"
+	},
+	"dependencies": {
+		"@abcnews/aunty": "^13.1.0",
+		"@abcnews/mount-utils": "^2.0.0",
+		"@abcnews/scrollyteller": "^1.1.3",
+		"@babel/preset-react": "^7.18.6",
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1",
+		"webfontloader": "^1.6.28"
+	}
 }
