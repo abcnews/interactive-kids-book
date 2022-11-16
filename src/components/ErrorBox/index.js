@@ -1,5 +1,5 @@
-const React = require('react');
-const styles = require('./styles.css');
+const React = require("react");
+const styles = require("./styles.css");
 
 class ErrorBox extends React.Component {
   componentDidMount() {

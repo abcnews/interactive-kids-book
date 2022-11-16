@@ -1,10 +1,10 @@
-const React = require('react');
-const renderer = require('react-test-renderer');
+const React = require("react");
+const renderer = require("react-test-renderer");
 
-const Book = require('.');
+const Book = require(".");
 
-describe('Book', () => {
-  test('It renders', () => {
+describe("Book", () => {
+  test("It renders", () => {
     const component = renderer.create(<Book pages={[]} />);
 
     let tree = component.toJSON();

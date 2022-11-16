@@ -22,7 +22,7 @@
 
   max-width: 800px;
 
-  background-image: url('./Images/balloon-background.png');
+  background-image: url("./Images/balloon-background.png");
   background-size: 100% 100%;
 
   img {
@@ -63,25 +63,27 @@
     }
 
     * {
-      font-family: 'Schoolbell', sans-serif;
+      font-family: "Schoolbell", sans-serif;
       font-size: 1.8rem;
       line-height: 2.3rem;
     }
 
     .factPanelTop {
       height: 40px;
-      background: url('./Images/fact-background-top.png') no-repeat top center;
+      background: url("./Images/fact-background-top.png") no-repeat top center;
       background-size: 100% 100%;
     }
 
     .factPanelMiddle {
-      background: url('./Images/fact-background-middle.png') no-repeat top center;
+      background: url("./Images/fact-background-middle.png") no-repeat top
+        center;
       background-size: 100% 100%;
     }
 
     .factPanelBottom {
       height: 140px;
-      background: url('./Images/fact-background-bottom.png') no-repeat top center;
+      background: url("./Images/fact-background-bottom.png") no-repeat top
+        center;
       background-size: 100% 100%;
     }
 
@@ -94,13 +96,13 @@
     }
 
     .stickRight {
-      background: url('./Images/stick-right.png') no-repeat top left;
+      background: url("./Images/stick-right.png") no-repeat top left;
       top: calc(100% - 107px);
       left: 80%;
     }
 
     .stickLeft {
-      background: url('./Images/stick-left.png') no-repeat top left;
+      background: url("./Images/stick-left.png") no-repeat top left;
       top: calc(100% - 110px);
       left: 20%;
     }
@@ -168,13 +170,13 @@
       }
 
       .stickLeft {
-        background-image: url('./Images/stick-right.png') !important;
+        background-image: url("./Images/stick-right.png") !important;
         left: 18%;
         top: calc(100% - 109px);
       }
 
       .stickRight {
-        background-image: url('./Images/stick-left.png') !important;
+        background-image: url("./Images/stick-left.png") !important;
         left: 82%;
         top: calc(100% - 108px);
       }

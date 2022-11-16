@@ -1,9 +1,9 @@
-const React = require('react');
-const Scrollyteller = require('@abcnews/scrollyteller');
-const Book = require('../Book');
-const Panel = require('../Panel');
+const React = require("react");
+const Scrollyteller = require("@abcnews/scrollyteller");
+const Book = require("../Book");
+const Panel = require("../Panel");
 
-const styles = require('./styles.scss');
+const styles = require("./styles.scss");
 
 class App extends React.Component {
   constructor(props) {
@@ -12,13 +12,13 @@ class App extends React.Component {
     this.onMarker = this.onMarker.bind(this);
 
     this.state = {
-      config: {}
+      config: {},
     };
   }
 
   onMarker(marker) {
     let config = {
-      pageNumber: marker.pageNumber
+      pageNumber: marker.pageNumber,
     };
 
     this.setState(() => ({ config }));
@@ -35,7 +35,8 @@ class App extends React.Component {
           panels={scrollyteller.panels}
           className={`Block is-richtext is-piecemeal ${styles.scrollyteller}`}
           panelComponent={Panel}
-          onMarker={this.onMarker}>
+          onMarker={this.onMarker}
+        >
           <Book pages={scrollyteller.panels} pageNumber={config.pageNumber} />
         </Scrollyteller>
       </div>

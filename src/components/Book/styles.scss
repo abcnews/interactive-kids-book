@@ -1,13 +1,13 @@
 .wrapper {
   background: #f9f9f9;
-  background-image: url('./Images/paper-pattern.png');
+  background-image: url("./Images/paper-pattern.png");
   perspective: 12000px;
   transform: translateZ(0);
 }
 
 .page {
   background: #f9f9f9;
-  background-image: url('./Images/paper-pattern.png');
+  background-image: url("./Images/paper-pattern.png");
   position: absolute;
   top: 0;
   left: 0;
