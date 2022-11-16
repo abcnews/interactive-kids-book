@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "@abcnews/aunty": "^13.1.0",
+    "@abcnews/mount-utils": "^2.0.0",
     "@abcnews/scrollyteller": "^1.1.3",
+    "@babel/preset-react": "^7.18.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "webfontloader": "^1.6.28"
