@@ -3,7 +3,7 @@ const Scrollyteller = require("@abcnews/scrollyteller");
 const Book = require("../Book");
 const Panel = require("../Panel");
 
-const styles = require("./styles.scss");
+const styles = require("./styles.scss").default;
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +22,26 @@ class App extends React.Component {
     };
 
     this.setState(() => ({ config }));
+  }
+
+  componentDidMount() {
+    const sleep = (milliseconds) => {
+      return new Promise((resolve) => setTimeout(resolve, milliseconds));
+    };
+
+    sleep(1000).then(() => {
+      if (window.scrollY < 4) {
+        const offsetString = getComputedStyle(
+          document.querySelector(".Main")
+        ).getPropertyValue("--Main-offsetTop");
+
+        const offsetNumber = parseInt(offsetString, 10);
+
+        if (typeof offsetNumber !== "number") return;
+
+        window.scrollTo({ top: offsetNumber, left: 0, behavior: "smooth" });
+      }
+    });
   }
 
   render() {

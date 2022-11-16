@@ -1,6 +1,6 @@
 const React = require("react");
 const Images = require("./images");
-const styles = require("./styles.scss");
+const styles = require("./styles.scss").default;
 
 class Panel extends React.Component {
   constructor(props) {

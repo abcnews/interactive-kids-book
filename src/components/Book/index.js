@@ -1,7 +1,7 @@
 const React = require("react");
 const Images = require("./images");
 
-const styles = require("./styles.scss");
+const styles = require("./styles.scss").default;
 
 const TRANSFORM_PAGE_IN = `scale(1, 1)`;
 const TRANSFORM_PAGE_OUT = `scale(0, 1.5)`;

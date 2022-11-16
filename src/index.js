@@ -1,4 +1,4 @@
-require("./styles.scss");
+require("./styles.scss").default;
 
 const React = require("react");
 const { render } = require("react-dom");
@@ -9,14 +9,36 @@ WebFont.load({
   },
 });
 
+import { selectMounts } from "@abcnews/mount-utils";
+
+/**
+ * Transforms PL mount points back into Phase 1 style anchor tags.
+ * Useful for porting old stories to support rendering in PL.
+ * eg. <div id="hashname"></div> ----> <a name="hashname"> </a>
+ */
+function backtransformMounts() {
+  const mounts = selectMounts();
+
+  mounts.forEach((mount) => {
+    const anchorEl = document.createElement("a");
+    anchorEl.name = mount.id;
+    anchorEl.innerHTML = " ";
+
+    // replace element
+    mount.parentNode.replaceChild(anchorEl, mount);
+  });
+}
+
 function init() {
-  let share = document.uerySelector(".Share");
+  backtransformMounts();
+
+  let share = document.querySelector(".Share");
   share.parentElement.removeChild(share);
 
   const scrollyteller =
     require("@abcnews/scrollyteller").loadOdysseyScrollyteller(
       "book",
-      "u-full",
+      "u-full bear-finds-a-voice-book",
       "mark"
     );
 
