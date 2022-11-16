@@ -31,7 +31,13 @@ class App extends React.Component {
 
     sleep(1000).then(() => {
       if (window.scrollY < 4) {
-        window.scrollTo({ top: 100, left: 0, behavior: "smooth" });
+        const offsetString = getComputedStyle(
+          document.querySelector(".Main")
+        ).getPropertyValue("--Main-offsetTop");
+
+        const offsetNumber = parseInt(offsetString, 10);
+
+        window.scrollTo({ top: offsetNumber, left: 0, behavior: "smooth" });
       }
     });
   }
