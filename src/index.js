@@ -33,7 +33,7 @@ function init() {
   backtransformMounts();
 
   let share = document.querySelector(".Share");
-  share.parentElement.removeChild(share);
+  share?.parentElement?.removeChild(share);
 
   const scrollyteller =
     require("@abcnews/scrollyteller").loadOdysseyScrollyteller(
